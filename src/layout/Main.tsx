@@ -1,12 +1,16 @@
-import {Portfolio} from "../pages/portfolio/Portfolio.tsx";
 import {Header} from "./Header.tsx";
+import {Outlet} from "react-router-dom";
 
 const Main = () => {
     return (
-        <main>
-            <Header/>
-            <Portfolio/>
-        </main>
+        <>
+            <main>
+                <Header/>
+                <section>
+                    <Outlet/>
+                </section>
+            </main>
+        </>
     );
 };
 

@@ -1,6 +1,6 @@
 import {IInfoPortfolio} from "../dataForm.ts";
 import React from "react";
-import {CardStyled} from "../../../components/CardStyled.tsx";
+import {CardStyled} from "../../../components/ui/CardStyled.tsx";
 
 
 type Props = {

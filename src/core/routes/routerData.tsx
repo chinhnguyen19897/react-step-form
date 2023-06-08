@@ -1,12 +1,18 @@
-import {routerType} from "./router.types.ts";
-import Main from "../../layout/Main.tsx";
+import {FormPerson} from "../../pages/portfolio/FormPerson.tsx";
+import {Home} from "../../pages/home/Home.tsx";
 
-const routerData: routerType[] = [
+const routerData = [
     {
         path: "",
-        element: <Main/>,
+        element: <Home/>,
         title: "Home"
+    },
+    {
+        path: "/step-form",
+        element: <FormPerson/>,
+        title: "Form Person"
     }
 ]
+
 
 export default routerData;
