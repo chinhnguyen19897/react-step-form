@@ -1,5 +1,6 @@
 import React from "react";
 import {StepIndicator} from "../step-indicator/StepIndicator.tsx";
+import {SideBarStep} from "../../../components/ui/sidebar/SideBarStyled.tsx";
 
 type StepProps = {
     activeStep: number,
@@ -16,14 +17,14 @@ const Steps: React.FC<StepProps> = ({stepData, activeStep}) => {
         return id >= 4
     }
     return (
-        <section>
+        <SideBarStep>
             {
                 stepData.map(step => (
                     <StepIndicator key={step.id} isActive={isStepActive(step.id)} title={step.title}
                                    stepNumber={step.id}/>
                 ))
             }
-        </section>
+        </SideBarStep>
     );
 };
 

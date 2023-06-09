@@ -1,6 +1,7 @@
 import React, {ReactNode, useContext} from "react";
 import {StepFormContext} from "../../../core/context/Context.tsx";
-import {StepFormStyled} from "./StepFormStyled.tsx";
+import {StepFormFooter, StepFormHeader, StepFormStyled, StepFormWrapper} from "./StepFormStyled.tsx";
+import {Button} from "../../../components/ui/button/ButtonStyled.tsx";
 
 type StepFormProps = {
     heading: string,
@@ -9,39 +10,44 @@ type StepFormProps = {
     isFirst: boolean,
     children: ReactNode
 }
+
+
 const StepForm: React.FC<StepFormProps> = ({children, isFirst, isLast, subheading, heading}) => {
     const formAPI = useContext(StepFormContext)
     const showHeaderFooter = formAPI?.step != 5 || false;
 
+    const handleSubmit = () => {
+        const handler = formAPI?.getSubmitHandler();
+        // @ts-ignore
+        handler()
+    }
 
     return (
         <StepFormStyled id="step-section">
             {
-                showHeaderFooter && <header>
+                showHeaderFooter && <StepFormHeader>
                     <h1>{heading}</h1>
                     <h2>{subheading}</h2>
-                </header>
+                </StepFormHeader>
             }
-            <section>
+            <StepFormWrapper>
                 {children}
-            </section>
+            </StepFormWrapper>
             {
-                showHeaderFooter && <footer>
+                showHeaderFooter && <StepFormFooter>
                     {
                         !isFirst && (
-                            <button onClick={() => {
+                            <Button onClick={() => {
                                 formAPI?.prevStep()
                             }}>
                                 Go Back
-                            </button>
+                            </Button>
                         )
                     }
-                    <button onClick={() => {
-                        formAPI?.getSubmitHandler()
-                    }}>
+                    <Button onClick={handleSubmit}>
                         {isLast ? "Confirm" : "Next Step"}
-                    </button>
-                </footer>
+                    </Button>
+                </StepFormFooter>
             }
         </StepFormStyled>
     );
