@@ -1,6 +1,6 @@
 import React, {ReactEventHandler} from 'react';
-import {PriceUnit} from "@types/form.ts";
-import {formatPrice} from "../../utils/form-utils.ts";
+import {PriceUnit} from "types/form.ts";
+import {formatPrice} from "@utils/form-utils.ts";
 
 type CardProps = {
     icon: string;

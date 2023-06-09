@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import {StepFormContext} from "@/core/context/Context.tsx";
+import {StepFormContext} from "@core/context/Context.tsx";
 import {FormInput} from "@components/form-input/FormInput.tsx";
 import {regExEmail, regExPhone} from "@utils/regex-utils.ts";
 

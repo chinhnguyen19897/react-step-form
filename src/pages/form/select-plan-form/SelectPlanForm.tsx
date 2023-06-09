@@ -1,8 +1,8 @@
-import {StepFormContext} from "../../../core/context/Context.tsx";
+import {StepFormContext} from "@core/context/Context.tsx";
 import {useContext} from "react";
-import {Card} from "../../../components/card/Card.tsx";
-import {PriceUnit} from "@types/form.ts";
-import {Switch} from "../../../components/switch/Switch.tsx";
+import {Card} from "@components/Card/Card";
+import {PriceUnit} from "types/form.ts";
+import {Switch} from "@components/switch/Switch.tsx";
 
 export const SelectPlanForm = () => {
     const formAPI = useContext(StepFormContext);

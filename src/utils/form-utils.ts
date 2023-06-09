@@ -1,4 +1,4 @@
-import {PriceUnit} from "@types/form.ts";
+import {PriceUnit} from "types/form.ts";
 
 export const formatPrice = (price: string, units: PriceUnit) => {
     switch (units) {
