@@ -1,7 +1,7 @@
 import routerData from "./routerData.tsx";
 import {routerType} from "./router.types.ts";
 import {Route, Routes} from "react-router-dom";
-import Main from "../../layout/Main.tsx";
+import Main from "@layout/Main.tsx";
 
 const Router = () => {
     const pageRoutes = routerData.map(({path, title, element}: routerType) => {

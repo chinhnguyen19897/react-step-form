@@ -1,6 +1,6 @@
 import React, {useMemo} from "react";
 import {FieldError, UseFormRegisterReturn} from "react-hook-form";
-import {generateID} from "../../utils/stepUtils.ts";
+import {generateID} from "@utils/stepUtils.ts";
 
 interface FormInputProps extends UseFormRegisterReturn {
     type: string,
