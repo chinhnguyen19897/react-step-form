@@ -1,8 +1,8 @@
 import {createContext, useState} from "react";
-import {PersonalInfo, PriceUnit, StepFormContextType} from "../../types/FormTypes.ts";
+import {PersonalInfo, PriceUnit, StepFormContextType} from "../../types/form.ts"
 import {personInfo} from "@pages/form/dataForm.ts";
 import {useForm} from "react-hook-form";
-import {AddOns, PLANS, STEP_INFO} from "@utils/stepUtils.ts";
+import {AddOns, PLANS, STEP_INFO} from "@utils/step-utils.ts";
 
 
 export const StepFormContext = createContext<StepFormContextType>(null)

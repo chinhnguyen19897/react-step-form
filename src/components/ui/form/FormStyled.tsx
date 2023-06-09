@@ -15,6 +15,6 @@ export const MainForm = styled.section`
   border-radius: 0 0.75rem 0.75rem 0;
   width: 100%;
   height: 60%;
-  min-width: 568px;
+  min-height: 568px;
   background-color: #fff;
 `

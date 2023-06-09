@@ -4,6 +4,7 @@ import {useStepForm} from "../../core/context/Context.tsx";
 import {FormWrapper, MainForm} from "../../components/ui/form/FormStyled.tsx";
 import StepForm from "./step-form/StepForm.tsx";
 import {PersonalInfoForm} from "./personal-form/PersonalInfoForm.tsx";
+import {SelectPlanForm} from "./select-plan-form/SelectPlanForm.tsx";
 
 export const FormPerson = () => {
 
@@ -17,7 +18,7 @@ export const FormPerson = () => {
             <MainForm id="main-form">
                 <StepForm {...stepFormProps}>
                     <PersonalInfoForm/>
-                    
+                    <SelectPlanForm/>
                 </StepForm>
             </MainForm>
         </FormWrapper>
