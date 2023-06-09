@@ -6,9 +6,7 @@ const Main = () => {
         <>
             <main>
                 <Header/>
-                <section>
-                    <Outlet/>
-                </section>
+                <Outlet/>
             </main>
         </>
     );
