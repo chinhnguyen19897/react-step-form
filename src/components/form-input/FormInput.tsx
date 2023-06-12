@@ -13,6 +13,7 @@ interface FormInputProps extends UseFormRegisterReturn {
 export const FormInput = React.forwardRef<HTMLInputElement, FormInputProps>(
     (props, ref) => {
         const formID = useMemo(() => `form-input-${generateID()}`, []);
+        console.log(formID)
         const errorMessage =
             props.error?.type === "required"
                 ? "This field is required"

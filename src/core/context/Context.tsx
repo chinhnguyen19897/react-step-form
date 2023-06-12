@@ -56,7 +56,7 @@ export const useStepForm = (maxSteps: number) => {
         return STEP_INFO;
     }
 
-    const getAllPlan = () => {
+    const getAllPlans = () => {
         return PLANS;
     }
 
@@ -128,7 +128,7 @@ export const useStepForm = (maxSteps: number) => {
             personalInfoError: formState.errors
         },
         planInfo: {
-            getAllPlan,
+            getAllPlans,
             isPlanActive,
             setPlanAsActive,
             pricingType,

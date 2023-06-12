@@ -1,4 +1,4 @@
-import React, {ReactEventHandler, useMemo} from 'react';
+import {ReactEventHandler, useMemo} from 'react';
 import {generateID} from "@utils/stepUtils.ts";
 import {PriceUnit} from "types/form.ts";
 import {formatCost} from "@utils/formUtils.ts";
@@ -11,7 +11,7 @@ type CardCheckboxProps = {
     unit: PriceUnit,
     onChange: (e: ReactEventHandler) => void,
 }
-export const CardCheckbox: React.FC<CardCheckboxProps> = ({title, cost, unit, onChange, subtitle, isChecked}) => {
+export const CardCheckbox = ({title, cost, unit, onChange, subtitle, isChecked}: CardCheckboxProps) => {
     const price = formatCost(cost, unit);
     const checkboxID = useMemo(() => (`checkbox-${generateID()}`), []);
     return (

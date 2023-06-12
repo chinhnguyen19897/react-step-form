@@ -8,7 +8,7 @@ const routerData = [
         title: "Home"
     },
     {
-        path: "/step-indicator-form",
+        path: "/step-form",
         element: <Form/>,
         title: "form Person"
     }
