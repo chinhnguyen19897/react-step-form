@@ -2,7 +2,7 @@ import {
     StepIndicatorNumber,
     StepIndicatorTitle,
     StepIndicatorWrapper
-} from "@components/step-indicator/StepIndicatorStyles";
+} from "@components/step-indicator/stepIndicatorStyles.ts";
 
 type Props = {
     isActive: boolean;

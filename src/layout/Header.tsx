@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom'
-import {NavbarStyled} from "@assets/styles/header/header..styles.ts";
+import {NavbarStyled} from "@assets/styles/header/headerStyles.ts";
 
 export const Header = () => {
     return (
