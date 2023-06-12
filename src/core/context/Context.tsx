@@ -84,6 +84,7 @@ export const useStepForm = (maxSteps: number) => {
     }
 
     const setPlanAsActive = (id: string) => {
+        console.log(id)
         return setActivePlan(id);
     }
 
