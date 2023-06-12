@@ -12,18 +12,13 @@ type StepFormProps = {
 }
 
 
-const StepForm: React.FC<StepFormProps> = ({children, isFirst, isLast, subheading, heading}) => {
+const StepForm = ({children, isFirst, isLast, subheading, heading}: StepFormProps) => {
     const formAPI = useContext(StepFormContext)
     const showHeaderFooter = formAPI?.step != 5 || false;
 
-    const handleSubmit = () => {
-        if(formAPI) {
-            formAPI.getSubmitHandler()
-        }
-
-        // handler()
+    const handleSubmit = async () => {
+        return formAPI?.getSubmitHandler()
     }
-
     return (
         <StepFormStyled id="step-section">
             {

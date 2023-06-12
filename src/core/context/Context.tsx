@@ -105,7 +105,7 @@ export const useStepForm = (maxSteps: number) => {
             const invalidHandler = (data: unknown) => {
                 console.log("Invalid Personal Info: ", data);
             }
-            return handlePersonalInfoSubmit(validHandler, invalidHandler)
+            return handlePersonalInfoSubmit(validHandler, invalidHandler)()
         } else {
             return nextStep()
         }

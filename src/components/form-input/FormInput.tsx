@@ -12,7 +12,7 @@ interface FormInputProps extends UseFormRegisterReturn {
 }
 
 export const FormInput = React.forwardRef<HTMLInputElement, FormInputProps>(
-    (props) => {
+    (props, ref) => {
         const formID  = useMemo(() => `form-input-${generateID()}`, []);
         const required = props.error?.type === "required";
         const errorMessage =
@@ -28,7 +28,7 @@ export const FormInput = React.forwardRef<HTMLInputElement, FormInputProps>(
                     <label htmlFor={formID}>{props.label}</label>
                     {props.error && <span className="error-massage">{errorMessage}</span>}
                 </FormInputLabel>
-                <Input id={formID} required={required} {...propsWithoutClassName} />
+                <Input id={formID} ref={ref} required={required} {...propsWithoutClassName} />
             </FormInputWrapper>
         );
     },
