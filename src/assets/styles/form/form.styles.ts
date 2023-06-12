@@ -14,7 +14,6 @@ export const MainForm = styled.section`
   margin-top: 0;
   border-radius: 0 0.75rem 0.75rem 0;
   width: 100%;
-  height: 60%;
-  min-height: 568px;
+  min-height: 608px;
   background-color: #fff;
 `

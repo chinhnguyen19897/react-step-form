@@ -11,7 +11,7 @@ export const StepFormContext = React.createContext<StepFormContextType>(null)
 export const useStepForm = (maxSteps: number) => {
 
     const [stepNumber, setStepNumber] = useState(1);
-    const [, setPersonalInfo] = useState<PersonalInfo>(personInfo)
+    const [, setPersonalInfoData] = useState<PersonalInfo>(personInfo)
     const [activePlan, setActivePlan] = useState("1");
     const [pricingType, setPricingType] = useState<PriceUnit>(PriceUnit.MONTHLY)
     const [activeAddons, setActiveAddons] = useState<string[]>([]);
@@ -97,8 +97,9 @@ export const useStepForm = (maxSteps: number) => {
 
     const getSubmitHandler = () => {
         if (stepNumber === 1) {
+
             const validHandler = (data: PersonalInfo) => {
-                setPersonalInfo(data);
+                setPersonalInfoData(data);
                 nextStep()
             }
             const invalidHandler = (data: unknown) => {
@@ -125,7 +126,7 @@ export const useStepForm = (maxSteps: number) => {
         addOrRemoveAddon,
         personalInfo: {
             formRegister: register,
-            personalInfoError: formState.errors
+            personalInfoErrors: formState.errors
         },
         planInfo: {
             getAllPlans,

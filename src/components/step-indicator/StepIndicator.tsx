@@ -1,5 +1,8 @@
-import React from 'react';
-import {StepIndicatorStyled} from "@components/step-indicator/stepIndicator.styles.ts";
+import {
+    StepIndicatorNumber,
+    StepIndicatorTitle,
+    StepIndicatorWrapper
+} from "@components/step-indicator/stepIndicator.styles.ts";
 
 type Props = {
     isActive: boolean;
@@ -7,27 +10,19 @@ type Props = {
     title: string;
 };
 
-export const StepIndicator: React.FC<Props> = ({
-                                                   isActive,
-                                                   stepNumber,
-                                                   title,
-                                               }) => {
+export const StepIndicator = ({isActive, stepNumber, title,} : Props) => {
     return (
-        <StepIndicatorStyled>
-            <section
-                className={`rounded-[1000px] w-10 h-10 border  text-lg text-center align-middle leading-9 ${
-                    isActive
-                        ? "text-black bg-light-blue border-light-blue"
-                        : "text-white border-white"
-                }`}
+        <StepIndicatorWrapper>
+            <StepIndicatorNumber
+                isActive={isActive}
             >
                 {stepNumber}
-            </section>
-            <section className="hidden sm:block text-white tracking-wide ml-5">
-                <h2>Step {stepNumber}</h2>
-                <h2>{title}</h2>
-            </section>
-        </StepIndicatorStyled>
+            </StepIndicatorNumber>
+            <StepIndicatorTitle>
+                <h2 className="step-title">Step {stepNumber}</h2>
+                <h2 className="step-subtitle">{title}</h2>
+            </StepIndicatorTitle>
+        </StepIndicatorWrapper>
     );
 };
 

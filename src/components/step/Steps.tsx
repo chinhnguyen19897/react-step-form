@@ -1,4 +1,3 @@
-import React from "react";
 import {StepIndicator} from "@components/step-indicator/StepIndicator.tsx";
 import {SideBarStep} from "@assets/styles/sidebar/sideBar.styles.ts";
 
@@ -11,7 +10,7 @@ type StepProps = {
 }
 
 
-const Steps: React.FC<StepProps> = ({stepData, activeStep}) => {
+const Steps = ({stepData, activeStep}: StepProps) => {
     const isStepActive = (id: number) => {
         if (activeStep <= 3) return id === activeStep;
         return id >= 4

@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 
-export const SideBarStyled = styled.nav`
+export const SideBarWrapper = styled.nav`
   background-image: url("/images/bg-sidebar-desktop.svg");
   width: fit-content;
   min-width: 247px;
@@ -9,9 +9,11 @@ export const SideBarStyled = styled.nav`
   min-height: 568px;
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 8px;
+  border-radius: 0.75rem 0 0 0.75rem;
   border-width: 20px;
-  border-color: #fff;
+  border-color: #ffffff;
+  border-right-width: 0;
+  border-style: solid;
 `
 
 export const SideBarStep = styled.section`

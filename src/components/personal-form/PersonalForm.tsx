@@ -2,15 +2,16 @@ import React, {useContext} from "react";
 import {StepFormContext} from "@core/context/Context.tsx";
 import {FormInput} from "@components/form-input/FormInput.tsx";
 import {regExEmail, regExPhone} from "@utils/regexUtils.ts";
+import {PersonalFormWrapper} from "@components/personal-form/personalForm.styles.ts";
 
 
 export const PersonalForm: React.FC = () => {
     const formAPI = useContext(StepFormContext)
     const register = formAPI!.personalInfo.formRegister;
-    const errors = formAPI!.personalInfo.personalInfoErrors;
+    const errors = formAPI?.personalInfo.personalInfoErrors;
     if (formAPI?.step != 1) return <></>;
     return (
-        <section>
+        <PersonalFormWrapper>
             <FormInput label="Name" type="text" placeholder="e.g. Chinh Nguyen"
                        error={errors?.name}  {...register("name", {
                 required: true,
@@ -35,6 +36,6 @@ export const PersonalForm: React.FC = () => {
                 })}
                 error={errors?.phone}
             />
-        </section>
+        </PersonalFormWrapper>
     );
 }

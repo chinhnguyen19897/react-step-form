@@ -17,9 +17,11 @@ const StepForm: React.FC<StepFormProps> = ({children, isFirst, isLast, subheadin
     const showHeaderFooter = formAPI?.step != 5 || false;
 
     const handleSubmit = () => {
-        const handler = formAPI?.getSubmitHandler();
-        // @ts-ignore
-        handler()
+        if(formAPI) {
+            formAPI.getSubmitHandler()
+        }
+
+        // handler()
     }
 
     return (
