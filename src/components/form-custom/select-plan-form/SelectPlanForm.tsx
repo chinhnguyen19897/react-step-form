@@ -4,6 +4,7 @@ import {Card} from "@components/card/Card.tsx";
 import {PriceUnit} from "types/form.ts";
 import {Switch} from "@components/switch/Switch.tsx";
 import {SelectPlanFormWrapper} from "@components/form-custom/select-plan-form/SelectPlanFormStyles";
+import {SelectPlanFormSwitch} from "@components/select-plan-form/selectPlanForm.styles.ts";
 
 export const SelectPlanForm = () => {
     const formAPI = useContext(StepFormContext);
@@ -29,10 +30,10 @@ export const SelectPlanForm = () => {
                     })
                 }
             </SelectPlanFormWrapper>
-            <div>
+            <SelectPlanFormSwitch>
                 <Switch leftLabel="Monthly" rightLabel="Yearly" onChange={() => formAPI?.planInfo.togglePricingType()}
                         checked={formAPI?.planInfo.pricingType === PriceUnit.YEARLY}/>
-            </div>
+            </SelectPlanFormSwitch>
         </section>
     );
 };
