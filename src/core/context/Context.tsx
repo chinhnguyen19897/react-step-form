@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {PersonalInfo, PriceUnit, StepFormContextType} from "types/form.ts"
-import {personInfo} from "@pages/form/dataForm.ts";
+import {personInfo} from "@pages/form/DataForm";
 import {useForm} from "react-hook-form";
 import {AddOns, PLANS, STEP_INFO} from "@utils/stepUtils.ts";
 

@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import {StepFormContext} from "@core/context/Context.tsx";
 import {FormInput} from "@components/form-input/FormInput.tsx";
 import {regExEmail, regExPhone} from "@utils/regexUtils.ts";
-import {PersonalFormWrapper} from "@components/personal-form/personalForm.styles.ts";
+import {PersonalFormWrapper} from "@components/form-custom/personal-form/PersonalFormStyles";
 
 
 export const PersonalForm: React.FC = () => {
