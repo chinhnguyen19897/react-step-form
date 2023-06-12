@@ -10,13 +10,13 @@ type SwitchProps = {
 export const Switch = ({checked, onChange, leftLabel, rightLabel}: SwitchProps) => {
     return (
         <HeadlessSwitch.Group>
-            <HeadlessSwitch.Label className={`${checked ? "text-marine-blue" : "text-light-gray"} label-monthly`}>
+            <HeadlessSwitch.Label className={`${!checked ? "text-marine-blue" : "text-light-gray"} label-monthly`}>
                 {leftLabel}
             </HeadlessSwitch.Label>
             <HeadlessSwitch checked={checked} onChange={onChange} className={`${checked ? 'translate-x-6' : 'translate-x-1'} switch-button`}>
                 <span/>
             </HeadlessSwitch>
-            <HeadlessSwitch.Label className="label-yearly">
+            <HeadlessSwitch.Label className={`${checked ? "text-marine-blue" : "text-light-gray"} label-yearly`}>
                 {rightLabel}
             </HeadlessSwitch.Label>
         </HeadlessSwitch.Group>

@@ -14,6 +14,9 @@ export const SelectPlanFormSwitch = styled.div`
   align-items: center;
   border-radius: 0.5rem;
   margin-top: 24px;
+  label {
+    font-weight: 700;
+  }
   .label-monthly {
     margin-right: 32px;
   }

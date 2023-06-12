@@ -111,6 +111,21 @@ export const useStepForm = (maxSteps: number) => {
         }
     }
 
+     const getFormSummary = () => {
+        const chosenPlan = PLANS.find(plan => plan.id === activePlan);
+        const chosenAddons = AddOns.filter(addOn => activeAddons.includes(addOn.id))
+            .map(addOn => ({ name: addOn.title, price: pricingType === PriceUnit.MONTHLY ? addOn.monthlyCost : addOn.yearlyCost }))
+        const state = {
+            plan: chosenPlan?.title,
+            unit: pricingType,
+            planPrice: pricingType === PriceUnit.MONTHLY ? chosenPlan?.monthlyCost : chosenPlan?.yearlyCost,
+            addOns: chosenAddons,
+            total: ""
+        }
+        const total = Number(state.planPrice) + state.addOns.reduce((prev, addOn) => prev + Number(addOn.price), 0);
+        state.total = "" + total;
+        return state;
+    }
 
     return {
         step: stepNumber,
@@ -140,6 +155,7 @@ export const useStepForm = (maxSteps: number) => {
             isActiveAddon,
             addOrRemoveAddon
         },
-        getSubmitHandler
+        getSubmitHandler,
+        getFormSummary
     }
 }
