@@ -1,9 +1,12 @@
-import { StepFormContext } from "@core/context/Context.tsx";
-import { useContext } from "react";
-import { Card } from "@components/card/Card.tsx";
-import { PriceUnit } from "types/form.ts";
-import { Switch } from "@components/switch/Switch.tsx";
-import { SelectPlanFormWrapper } from "@components/form-custom/select-plan-form/SelectPlanFormStyles";
+import {StepFormContext} from "@core/context/Context.tsx";
+import {useContext} from "react";
+import {Card} from "@components/card/Card.tsx";
+import {PriceUnit} from "types/form.ts";
+import {Switch} from "@components/switch/Switch.tsx";
+import {
+    SelectPlanFormSwitch,
+    SelectPlanFormWrapper
+} from "@components/form-custom/select-plan-form/selectPlanFormStyles.ts";
 
 export const SelectPlanForm = () => {
   const formAPI = useContext(StepFormContext);

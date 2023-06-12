@@ -1,5 +1,5 @@
 import { StepIndicator } from "@components/step-indicator/StepIndicator.tsx";
-import { SideBarStep } from "@assets/styles/sidebar/sideBar.styles.ts";
+import { SideBarStep } from "@assets/styles/sidebar/sideBarStyles.ts";
 
 type StepProps = {
   activeStep: number;

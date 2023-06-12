@@ -1,6 +1,6 @@
-import { PriceUnit } from "types/form.ts";
-import { formatPrice } from "@utils/formUtils.ts";
-import { CardStyles } from "@components/card/CardStyles.ts";
+import {PriceUnit} from "types/form.ts";
+import {formatPrice} from "@utils/formUtils.ts";
+import {CardStyles} from "@components/card/cardStyles.ts";
 
 type CardProps = {
   icon: string;
