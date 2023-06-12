@@ -1,6 +1,6 @@
-import {SideBar} from "../../layout/SideBar.tsx";
+import {SideBar} from "@layout/SideBar.tsx";
 import Steps from "@components/step/Steps.tsx";
-import {useStepForm} from "../../core/context/Context.tsx";
+import {useStepForm} from "@core/context/Context.tsx";
 import {FormWrapper, MainForm} from "@assets/styles/form/form.styles.ts";
 import StepForm from "@components/step-form/StepForm.tsx";
 import {PersonalForm} from "@components/personal-form/PersonalForm.tsx";
