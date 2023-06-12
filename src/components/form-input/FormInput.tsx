@@ -1,6 +1,7 @@
 import React, {useMemo} from "react";
 import {FieldError, UseFormRegisterReturn} from "react-hook-form";
 import {generateID} from "@utils/stepUtils.ts";
+import {FormInputLabel, FormInputWrapper, Input} from "@components/form-input/formInput.styles.ts";
 
 interface FormInputProps extends UseFormRegisterReturn {
     type: string;
@@ -11,24 +12,24 @@ interface FormInputProps extends UseFormRegisterReturn {
 }
 
 export const FormInput = React.forwardRef<HTMLInputElement, FormInputProps>(
-    (props, ref) => {
-        const formID = useMemo(() => `form-input-${generateID()}`, []);
-        console.log(formID)
+    (props) => {
+        const formID  = useMemo(() => `form-input-${generateID()}`, []);
+        const required = props.error?.type === "required";
         const errorMessage =
-            props.error?.type === "required"
+            required
                 ? "This field is required"
                 : `Invalid ${props.name}`;
         const propsWithoutClassName = {...props};
         delete propsWithoutClassName.className;
         delete propsWithoutClassName.error;
         return (
-            <section>
-                <section>
+            <FormInputWrapper>
+                <FormInputLabel>
                     <label htmlFor={formID}>{props.label}</label>
-                    {props.error && <span className="">{errorMessage}</span>}
-                </section>
-                <input id={formID} ref={ref} {...propsWithoutClassName} />
-            </section>
+                    {props.error && <span className="error-massage">{errorMessage}</span>}
+                </FormInputLabel>
+                <Input id={formID} required={required} {...propsWithoutClassName} />
+            </FormInputWrapper>
         );
     },
 );

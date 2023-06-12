@@ -1,14 +1,14 @@
-import React, {ReactNode} from 'react';
-import {SideBarStyled} from "@assets/styles/sidebar/sideBar.styles.ts";
+import {ReactNode} from 'react';
+import {SideBarWrapper} from "@assets/styles/sidebar/sideBar.styles.ts";
 
 
 type Props = {
     children: ReactNode
 }
-export const SideBar: React.FC<Props> = ({children}) => {
+export const SideBar = ({children}: Props) => {
     return (
-        <SideBarStyled>
+        <SideBarWrapper>
             {children}
-        </SideBarStyled>
+        </SideBarWrapper>
     );
 };
