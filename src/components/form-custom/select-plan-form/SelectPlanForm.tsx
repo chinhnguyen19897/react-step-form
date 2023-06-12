@@ -34,14 +34,14 @@ export const SelectPlanForm = () => {
           );
         })}
       </SelectPlanFormWrapper>
-      <div>
+      <SelectPlanFormSwitch>
         <Switch
           leftLabel="Monthly"
           rightLabel="Yearly"
           onChange={() => formAPI?.planInfo.togglePricingType()}
           checked={formAPI?.planInfo.pricingType === PriceUnit.YEARLY}
         />
-      </div>
+      </SelectPlanFormSwitch>
     </section>
   );
 };
