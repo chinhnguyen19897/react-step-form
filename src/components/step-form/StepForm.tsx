@@ -1,7 +1,7 @@
 import React, {ReactNode, useContext} from "react";
-import {StepFormContext} from "../../../core/context/Context.tsx";
-import {StepFormFooter, StepFormHeader, StepFormStyled, StepFormWrapper} from "./StepFormStyled.tsx";
-import {Button} from "../../../components/ui/button/ButtonStyled.tsx";
+import {StepFormContext} from "@core/context/Context.tsx";
+import {StepFormFooter, StepFormHeader, StepFormStyled, StepFormWrapper} from "./stepForm.styles.ts";
+import {Button} from "@assets/styles/button/button.styles.ts";
 
 type StepFormProps = {
     heading: string,

@@ -1,7 +1,7 @@
 import React, {ReactEventHandler, useMemo} from 'react';
-import {PriceUnit} from "types/form.ts";
-import {formatCost} from "@utils/form-utils.ts";
-import {generateID} from "@utils/step-utils.ts";
+import {generateID} from "@utils/stepUtils.ts";
+import {PriceUnit} from "@types/form.ts";
+import {formatCost} from "@utils/formUtils.ts";
 
 type CardCheckboxProps = {
     title: string,

@@ -28,21 +28,21 @@ export const STEP_INFO = [
 export const PLANS = [
     {
         id: "1",
-        icon: "/images/icon-arcade.svg",
+        icon: "/styles/icon-arcade.svg",
         title: "Arcade",
         monthlyCost: "9",
         yearlyCost: "90",
     },
     {
         id: "2",
-        icon: "/images/icon-advanced.svg",
+        icon: "/styles/icon-advanced.svg",
         title: "Advanced",
         monthlyCost: "12",
         yearlyCost: "120",
     },
     {
         id: "3",
-        icon: "/images/icon-pro.svg",
+        icon: "/styles/icon-pro.svg",
         title: "Pro",
         monthlyCost: "15",
         yearlyCost: "150",

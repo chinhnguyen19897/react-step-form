@@ -1,11 +1,11 @@
-import {createContext, useState} from "react";
-import {PersonalInfo, PriceUnit, StepFormContextType} from "../../types/form.ts"
+import React, {useState} from "react";
+import {PersonalInfo, PriceUnit, StepFormContextType} from "@/types/form.ts"
 import {personInfo} from "@pages/form/dataForm.ts";
 import {useForm} from "react-hook-form";
-import {AddOns, PLANS, STEP_INFO} from "@utils/step-utils.ts";
+import {AddOns, PLANS, STEP_INFO} from "@utils/stepUtils.ts";
 
 
-export const StepFormContext = createContext<StepFormContextType>(null)
+export const StepFormContext = React.createContext<StepFormContextType>(null)
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const useStepForm = (maxSteps: number) => {

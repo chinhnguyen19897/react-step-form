@@ -1,12 +1,12 @@
 import {SideBar} from "../../layout/SideBar.tsx";
-import Steps from "./step/Steps.tsx";
+import Steps from "@components/step/Steps.tsx";
 import {useStepForm} from "../../core/context/Context.tsx";
-import {FormWrapper, MainForm} from "../../components/ui/form/FormStyled.tsx";
-import StepForm from "./step-form/StepForm.tsx";
-import {PersonalInfoForm} from "./personal-form/PersonalInfoForm.tsx";
-import {SelectPlanForm} from "./select-plan-form/SelectPlanForm.tsx";
+import {FormWrapper, MainForm} from "@assets/styles/form/form.styles.ts";
+import StepForm from "@components/step-form/StepForm.tsx";
+import {PersonalForm} from "@components/personal-form/PersonalForm.tsx";
+import {SelectPlanForm} from "@components/select-plan-form/SelectPlanForm.tsx";
 
-export const FormPerson = () => {
+export const Form = () => {
 
     const stepForm = useStepForm(5)
     const stepFormProps = {...stepForm.getCurrentStepInfo()}
@@ -17,7 +17,7 @@ export const FormPerson = () => {
             </SideBar>
             <MainForm id="main-form">
                 <StepForm {...stepFormProps}>
-                    <PersonalInfoForm/>
+                    <PersonalForm/>
                     <SelectPlanForm/>
                 </StepForm>
             </MainForm>
