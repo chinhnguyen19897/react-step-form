@@ -3,6 +3,7 @@ import {useContext} from "react";
 import {Card} from "@components/card/Card.tsx";
 import {PriceUnit} from "types/form.ts";
 import {Switch} from "@components/switch/Switch.tsx";
+import {SelectPlanFormWrapper} from "@components/select-plan-form/selectPlanForm.styles.ts";
 
 export const SelectPlanForm = () => {
     const formAPI = useContext(StepFormContext);
@@ -10,7 +11,7 @@ export const SelectPlanForm = () => {
     if (formAPI?.step !== 2) return <></>
     return (
         <section>
-            <div>
+            <SelectPlanFormWrapper>
                 {
                     allPlans?.map((plan) => {
                         const {id, icon, monthlyCost, title, yearlyCost} = plan;
@@ -27,7 +28,7 @@ export const SelectPlanForm = () => {
                         )
                     })
                 }
-            </div>
+            </SelectPlanFormWrapper>
             <div>
                 <Switch leftLabel="Monthly" rightLabel="Yearly" onChange={() => formAPI?.planInfo.togglePricingType()}
                         checked={formAPI?.planInfo.pricingType === PriceUnit.YEARLY}/>

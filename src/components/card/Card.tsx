@@ -1,6 +1,7 @@
 import {ReactEventHandler} from 'react';
 import {PriceUnit} from "types/form.ts";
 import {formatPrice} from "@utils/formUtils.ts";
+import {CardStyles} from "@components/card/card.styles.ts";
 
 type CardProps = {
     icon: string;
@@ -15,14 +16,14 @@ export const Card = ({icon, title, price, units, onClick, isActive}: CardProps) 
     const yearly = units === PriceUnit.YEARLY
 
     return (
-        <section onClick={() => onClick} className={`${isActive}`}>
+        <CardStyles onClick={() => onClick} isActive={isActive}>
             <img src={icon} alt="icon"/>
             <section>
                 <h3>{title}</h3>
                 <p>{prices}</p>
                 {yearly && (<p>2 months free</p>)}
             </section>
-        </section>
+        </CardStyles>
     );
 };
 
