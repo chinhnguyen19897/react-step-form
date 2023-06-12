@@ -1,4 +1,4 @@
-import {FormPerson} from "@pages/form/FormPerson.tsx";
+import {Form} from "@pages/form/Form.tsx";
 import {Home} from "@pages/home/Home.tsx";
 
 const routerData = [
@@ -8,8 +8,8 @@ const routerData = [
         title: "Home"
     },
     {
-        path: "/step-form",
-        element: <FormPerson/>,
+        path: "/step-indicator-form",
+        element: <Form/>,
         title: "form Person"
     }
 ]

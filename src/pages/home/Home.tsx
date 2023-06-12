@@ -1,4 +1,4 @@
-import {HomeStyled} from "./HomeStyled.tsx";
+import {HomeStyled} from "./home.styles.ts";
 import {Link} from "react-router-dom";
 
 export const Home = () => {

@@ -1,5 +1,5 @@
 import React, {ReactNode} from 'react';
-import {SideBarStyled} from "@components/ui/sidebar/SideBarStyled.tsx";
+import {SideBarStyled} from "@assets/styles/sidebar/sideBar.styles.ts";
 
 
 type Props = {

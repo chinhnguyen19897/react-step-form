@@ -1,10 +1,10 @@
 import React, {useContext} from "react";
 import {StepFormContext} from "@core/context/Context.tsx";
 import {FormInput} from "@components/form-input/FormInput.tsx";
-import {regExEmail, regExPhone} from "@utils/regex-utils.ts";
+import {regExEmail, regExPhone} from "@utils/regexUtils.ts";
 
 
-export const PersonalInfoForm: React.FC = () => {
+export const PersonalForm: React.FC = () => {
     const formAPI = useContext(StepFormContext)
     const register = formAPI!.personalInfo.formRegister;
     const errors = formAPI!.personalInfo.personalInfoErrors;

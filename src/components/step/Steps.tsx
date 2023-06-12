@@ -1,6 +1,6 @@
 import React from "react";
-import {StepIndicator} from "../step-indicator/StepIndicator.tsx";
-import {SideBarStep} from "../../../components/ui/sidebar/SideBarStyled.tsx";
+import {StepIndicator} from "@components/step-indicator/StepIndicator.tsx";
+import {SideBarStep} from "@assets/styles/sidebar/sideBar.styles.ts";
 
 type StepProps = {
     activeStep: number,

@@ -1,5 +1,5 @@
 import React from 'react';
-import {StepIndicatorStyled} from "@components/step/StepIndicatorStyled.tsx";
+import {StepIndicatorStyled} from "@components/step-indicator/stepIndicator.styles.ts";
 
 type Props = {
     isActive: boolean;
