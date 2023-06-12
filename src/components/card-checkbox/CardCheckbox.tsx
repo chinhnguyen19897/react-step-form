@@ -1,6 +1,6 @@
 import React, {ReactEventHandler, useMemo} from 'react';
 import {generateID} from "@utils/stepUtils.ts";
-import {PriceUnit} from "@types/form.ts";
+import {PriceUnit} from "types/form.ts";
 import {formatCost} from "@utils/formUtils.ts";
 
 type CardCheckboxProps = {

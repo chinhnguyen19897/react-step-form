@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {PersonalInfo, PriceUnit, StepFormContextType} from "@/types/form.ts"
+import {PersonalInfo, PriceUnit, StepFormContextType} from "types/form.ts"
 import {personInfo} from "@pages/form/dataForm.ts";
 import {useForm} from "react-hook-form";
 import {AddOns, PLANS, STEP_INFO} from "@utils/stepUtils.ts";
@@ -11,7 +11,7 @@ export const StepFormContext = React.createContext<StepFormContextType>(null)
 export const useStepForm = (maxSteps: number) => {
 
     const [stepNumber, setStepNumber] = useState(1);
-    const [personalInfo, setPersonalInfo] = useState<PersonalInfo>(personInfo)
+    const [, setPersonalInfo] = useState<PersonalInfo>(personInfo)
     const [activePlan, setActivePlan] = useState("1");
     const [pricingType, setPricingType] = useState<PriceUnit>(PriceUnit.MONTHLY)
     const [activeAddons, setActiveAddons] = useState<string[]>([]);

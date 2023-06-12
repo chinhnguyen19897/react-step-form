@@ -12,7 +12,7 @@
       "@pages/*": ["pages/*"],
       "@services/*": ["layout/*"],
       "@utils/*": ["utils/*"],
-      "@types/*": ["@types/*"],
+      "@types/*": ["types/*"],
       "@core/*": ["core/*"]
     },
     "types": ["node"],
