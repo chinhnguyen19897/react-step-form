@@ -5,6 +5,7 @@ import { FormWrapper, MainForm } from "@assets/styles/form/form.styles.ts";
 import StepForm from "@layout/step/StepLayout";
 import { PersonalForm } from "@components/form-custom/personal-form/PersonalForm";
 import { SelectPlanForm } from "@components/form-custom/select-plan-form/SelectPlanForm";
+import AddonsForm from "@components/form-custom/addons-form/AddonsForm";
 
 export const Form = () => {
   const stepForm = useStepForm(5);
@@ -20,6 +21,7 @@ export const Form = () => {
           <StepForm {...stepFormProps}>
             <PersonalForm />
             <SelectPlanForm />
+            <AddonsForm />
           </StepForm>
         </MainForm>
       </FormWrapper>
