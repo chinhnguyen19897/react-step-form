@@ -1,12 +1,7 @@
-import React, { ReactNode, useContext } from "react";
-import { StepFormContext } from "@core/context/Context.tsx";
-import {
-  StepFormFooter,
-  StepFormHeader,
-  StepFormStyled,
-  StepFormWrapper,
-} from "./StepLayoutStyles.ts";
-import { Button } from "@assets/styles/button/button.styles.ts";
+import {ReactNode, useContext} from "react";
+import {StepFormContext} from "@core/context/Context.tsx";
+import {StepFormFooter, StepFormHeader, StepFormStyled, StepFormWrapper,} from "./StepLayoutStyles.ts";
+import {Button} from "@assets/styles/button/button.styles.ts";
 
 type StepFormProps = {
   heading: string;
@@ -40,18 +35,18 @@ const StepForm = ({
       <StepFormWrapper>{children}</StepFormWrapper>
       {showHeaderFooter && (
         <StepFormFooter>
-          {!isFirst && (
-            <Button
-              onClick={() => {
-                formAPI?.prevStep();
-              }}
-            >
-              Go Back
-            </Button>
-          )}
-          <Button onClick={handleSubmit}>
-            {isLast ? "Confirm" : "Next Step"}
-          </Button>
+           {
+             !isFirst && (
+                            <Button onClick={() => {
+                                formAPI?.prevStep()
+                            }} className="button-prev">
+                                Go Back
+                            </Button>
+                        )
+                    }
+                    <Button onClick={handleSubmit} className="button-next">
+                        {isLast ? "Confirm" : "Next Step"}
+                    </Button>
         </StepFormFooter>
       )}
     </StepFormStyled>

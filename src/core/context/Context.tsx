@@ -1,11 +1,11 @@
 import React, {useState} from "react";
 import {PersonalInfo, PriceUnit, StepFormContextType} from "types/form.ts"
-import {personInfo} from "@pages/form/DataForm";
+import {personInfo} from "@pages/form/dataForm.ts";
 import {useForm} from "react-hook-form";
 import {AddOns, PLANS, STEP_INFO} from "@utils/stepUtils.ts";
 
 
-export const StepFormContext = React.createContext<Partial<StepFormContextType>>(null)
+export const StepFormContext = React.createContext<StepFormContextType>(null)
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const useStepForm = (maxSteps: number) => {
@@ -84,7 +84,6 @@ export const useStepForm = (maxSteps: number) => {
     }
 
     const setPlanAsActive = (id: string) => {
-        console.log(id)
         return setActivePlan(id);
     }
 
@@ -112,6 +111,21 @@ export const useStepForm = (maxSteps: number) => {
         }
     }
 
+     const getFormSummary = () => {
+        const chosenPlan = PLANS.find(plan => plan.id === activePlan);
+        const chosenAddons = AddOns.filter(addOn => activeAddons.includes(addOn.id))
+            .map(addOn => ({ name: addOn.title, price: pricingType === PriceUnit.MONTHLY ? addOn.monthlyCost : addOn.yearlyCost }))
+        const state = {
+            plan: chosenPlan?.title,
+            unit: pricingType,
+            planPrice: pricingType === PriceUnit.MONTHLY ? chosenPlan?.monthlyCost : chosenPlan?.yearlyCost,
+            addOns: chosenAddons,
+            total: ""
+        }
+        const total = Number(state.planPrice) + state.addOns.reduce((prev, addOn) => prev + Number(addOn.price), 0);
+        state.total = "" + total;
+        return state;
+    }
 
     return {
         step: stepNumber,
@@ -141,6 +155,7 @@ export const useStepForm = (maxSteps: number) => {
             isActiveAddon,
             addOrRemoveAddon
         },
-        getSubmitHandler
+        getSubmitHandler,
+        getFormSummary
     }
 }

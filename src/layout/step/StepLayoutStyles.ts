@@ -40,7 +40,14 @@ export const StepFormFooter = styled.footer`
   width: 100%;
   left: 0;
   bottom: 0;
-  text-align: end;
+  display: flex;
+  .button-prev {
+    background-color: transparent;
+    color: #9699AB;
+  }
+  .button-next {
+    margin-left: auto;
+  }
 `
 
 export const StepFormWrapper = styled.section`
