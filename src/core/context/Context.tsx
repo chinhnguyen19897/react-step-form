@@ -5,7 +5,7 @@ import {useForm} from "react-hook-form";
 import {AddOns, PLANS, STEP_INFO} from "@utils/stepUtils.ts";
 
 
-export const StepFormContext = React.createContext<StepFormContextType>(null)
+export const StepFormContext = React.createContext<Partial<StepFormContextType>>(null)
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const useStepForm = (maxSteps: number) => {
@@ -84,6 +84,7 @@ export const useStepForm = (maxSteps: number) => {
     }
 
     const setPlanAsActive = (id: string) => {
+        console.log(id)
         return setActivePlan(id);
     }
 
