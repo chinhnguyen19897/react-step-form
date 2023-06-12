@@ -5,7 +5,7 @@ import {
   FormInputLabel,
   FormInputWrapper,
   Input,
-} from "@components/form-input/FormInputStyles";
+} from "@components/form-input/formInputStyles.ts";
 
 interface FormInputProps extends UseFormRegisterReturn {
   type: string;

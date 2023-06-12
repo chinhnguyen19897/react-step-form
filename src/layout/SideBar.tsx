@@ -1,5 +1,5 @@
 import {ReactNode} from 'react';
-import {SideBarWrapper} from "@assets/styles/sidebar/sideBar.styles.ts";
+import {SideBarWrapper} from "@assets/styles/sidebar/sideBarStyles.ts";
 
 
 type Props = {
