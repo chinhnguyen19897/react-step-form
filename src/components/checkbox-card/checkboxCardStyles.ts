@@ -18,6 +18,7 @@ export const WrapCheckBox = styled.section<isChecked>`
   border-style: solid;
   border-radius: 10px;
   cursor: pointer;
+  margin: 16px 0;
 `;
 
 export const CheckBox = styled.div`

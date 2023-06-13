@@ -24,7 +24,7 @@ export const SummaryForm = () => {
 
 
     return (
-        <section>
+        <>
             <SummaryFormInfo>
                 <SummaryTotalPlanPrice>
                     <div>
@@ -51,7 +51,7 @@ export const SummaryForm = () => {
                 <p>Total (per {totalUnitString})</p>
                 <h2>{formatPrice(stateSummaryForm.total, stateSummaryForm.unit)}</h2>
             </TotalPerMonth>
-        </section>
+        </>
     );
 };
 
