@@ -3,7 +3,7 @@ import {PriceUnit} from "types/form.ts";
 import {StepFormContext} from "@core/context/FormContext.tsx";
 import {CheckboxCard} from "@components/checkbox-card/CheckboxCard";
 
-export const AddonsForm: React.FC = () => {
+export const AddonsForm = () => {
   const formAPI = useContext(StepFormContext);
   const allAddOns = formAPI?.addOnInfo.getAllAddons();
   if (formAPI?.step != 3) return <></>;
@@ -33,5 +33,3 @@ export const AddonsForm: React.FC = () => {
     </>
   );
 };
-
-export default AddonsForm;
