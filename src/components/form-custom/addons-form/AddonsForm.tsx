@@ -9,7 +9,7 @@ export const AddonsForm: React.FC = () => {
   if (formAPI?.step != 3) return <></>;
 
   return (
-    <section className="flex flex-col gap-4 mt-8">
+    <section>
       {allAddOns?.map((addOn) => (
         <CheckboxCard
           key={addOn.id}

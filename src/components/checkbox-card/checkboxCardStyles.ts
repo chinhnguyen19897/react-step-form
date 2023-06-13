@@ -53,7 +53,7 @@ export const WrapText = styled.div`
   letter-spacing: 0.5rem;
   flex-grow: 1;
   h3 {
-    &:first-child {
+    &:first-of-type {
       color: rgb(2 41 90 / 1);
       font-weight: 500;
       letter-spacing: 0.025em;

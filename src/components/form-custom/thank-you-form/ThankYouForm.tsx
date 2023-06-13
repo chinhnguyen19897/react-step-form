@@ -6,6 +6,10 @@ export const ThankYouForm = () => {
 
     const formAPI = useContext(StepFormContext)
 
+    const formSummary = formAPI?.getFormSummary();
+    const personalData = formAPI?.personalInfo.personalData;
+    console.log(personalData, formSummary)
+
     if(formAPI?.step !== 5) return <></>
 
     return (

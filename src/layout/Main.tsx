@@ -3,12 +3,10 @@ import {Outlet} from "react-router-dom";
 
 const Main = () => {
     return (
-        <>
             <main>
                     <Header/>
                     <Outlet/>
             </main>
-        </>
     );
 };
 
