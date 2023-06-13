@@ -11,7 +11,7 @@ export const StepFormContext = React.createContext<StepFormContextType>(null)
 export const useStepForm = (maxSteps: number) => {
 
     const [stepNumber, setStepNumber] = useState(1);
-    const [, setPersonalInfoData] = useState<PersonalInfo>(personInfo)
+    const [personalInfoData, setPersonalInfoData] = useState<PersonalInfo>(personInfo)
     const [activePlan, setActivePlan] = useState("1");
     const [pricingType, setPricingType] = useState<PriceUnit>(PriceUnit.MONTHLY)
     const [activeAddons, setActiveAddons] = useState<string[]>([]);
@@ -127,6 +127,7 @@ export const useStepForm = (maxSteps: number) => {
         return state;
     }
 
+
     return {
         step: stepNumber,
         nextStep,
@@ -139,9 +140,11 @@ export const useStepForm = (maxSteps: number) => {
         getAllAddons,
         isActiveAddon,
         addOrRemoveAddon,
+        personalInfoData,
         personalInfo: {
             formRegister: register,
-            personalInfoErrors: formState.errors
+            personalInfoErrors: formState.errors,
+            personalData: personalInfoData
         },
         planInfo: {
             getAllPlans,

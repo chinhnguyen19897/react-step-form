@@ -1,5 +1,5 @@
 import {ReactNode, useContext} from "react";
-import {StepFormContext} from "@core/context/Context.tsx";
+import {StepFormContext} from "@core/context/FormContext.tsx";
 import {StepFormFooter, StepFormHeader, StepFormStyled, StepFormWrapper,} from "./stepLayoutStyles.ts";
 import {Button} from "@assets/styles/button/buttonStyles.ts";
 
@@ -20,9 +20,8 @@ const StepForm = ({
 }: StepFormProps) => {
   const formAPI = useContext(StepFormContext);
   const showHeaderFooter = formAPI?.step != 5 || false;
-
   const handleSubmit = async () => {
-    return formAPI?.getSubmitHandler();
+    formAPI?.getSubmitHandler();
   };
   return (
     <StepFormStyled id="step-section">

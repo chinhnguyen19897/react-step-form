@@ -1,7 +1,7 @@
-import { useContext } from "react";
-import { PriceUnit } from "types/form.ts";
-import { StepFormContext } from "@core/context/Context.tsx";
-import { CheckboxCard } from "@components/checkbox-card/CheckboxCard";
+import {useContext} from "react";
+import {PriceUnit} from "types/form.ts";
+import {StepFormContext} from "@core/context/FormContext.tsx";
+import {CheckboxCard} from "@components/checkbox-card/CheckboxCard";
 
 export const AddonsForm: React.FC = () => {
   const formAPI = useContext(StepFormContext);

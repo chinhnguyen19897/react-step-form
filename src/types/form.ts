@@ -26,7 +26,8 @@ export type StepFormContextType = {
     getSubmitHandler: () => void;
     personalInfo: {
         formRegister: UseFormRegister<PersonalInfo>,
-        personalInfoErrors: FieldErrors<PersonalInfo>
+        personalInfoErrors: FieldErrors<PersonalInfo>,
+        personalData: PersonalInfo
     },
     planInfo: {
         isPlanActive: (id: string) => boolean,
@@ -76,3 +77,7 @@ export type FormSummaryInfo = {
     total: string;
 };
 
+export type SummaryInfo = {
+    plan?: string;
+    total?: string;
+}

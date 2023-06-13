@@ -1,7 +1,7 @@
-import { useMemo, useState } from "react";
-import { PriceUnit } from "types/form.ts";
-import { generateID } from "@utils/stepUtils.ts";
-import { WrapCheckBox, CheckBox, WrapText,WrapPrice } from "./CheckboxCardStyles";
+import {useMemo} from "react";
+import {PriceUnit} from "types/form.ts";
+import {generateID} from "@utils/stepUtils.ts";
+import {CheckBox, WrapCheckBox, WrapPrice, WrapText} from "./checkboxCardStyles.ts";
 
 interface CheckboxCardProps {
   isChecked: boolean;
