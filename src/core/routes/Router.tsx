@@ -1,4 +1,4 @@
-import routerData from "./routerData.tsx";
+import routerData from "./RouterData.tsx";
 import {routerType} from "./router.types.ts";
 import {Route, Routes} from "react-router-dom";
 import Main from "@layout/Main.tsx";
