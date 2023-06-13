@@ -11,9 +11,6 @@ export const Header = () => {
                 <Link to="/step-form">
                     <li>Form</li>
                 </Link>
-                <Link to="/list">
-                    <li>List</li>
-                </Link>
             </ul>
         </NavbarStyled>
     );
