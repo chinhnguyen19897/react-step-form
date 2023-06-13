@@ -16,7 +16,7 @@ export const Form = () => {
     <StepFormContext.Provider value={stepForm}>
       <FormWrapper>
         <SideBar>
-          <Steps activeStep={stepForm.step} stepData={stepForm.getAllSteps()} />
+          <Steps activeStep={stepForm.step} stepData={stepForm.getAllStepInfo()} />
         </SideBar>
         <MainForm id="main-form">
           <StepForm {...stepFormProps}>

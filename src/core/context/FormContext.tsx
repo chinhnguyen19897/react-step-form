@@ -52,7 +52,7 @@ export const useStepForm = (maxSteps: number) => {
         }
     }
 
-    const getAllSteps = () => {
+    const getAllStepInfo = () => {
         return STEP_INFO;
     }
 
@@ -136,7 +136,7 @@ export const useStepForm = (maxSteps: number) => {
         isLast,
         isFirst,
         getCurrentStepInfo,
-        getAllSteps,
+        getAllStepInfo,
         getAllAddons,
         isActiveAddon,
         addOrRemoveAddon,

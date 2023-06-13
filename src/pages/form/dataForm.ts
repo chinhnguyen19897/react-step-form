@@ -1,4 +1,3 @@
-import {FormSummaryInfo} from "@types/form.ts";
 
 export interface IIPersonInfo {
     name: string;
@@ -12,13 +11,3 @@ export const personInfo: IIPersonInfo = {
     email: "",
 }
 
-export const planInfo: FormSummaryInfo = {
-    plan: "",
-    unit: "",
-    planPrice: "",
-    addOns: {
-        name: "",
-        price: "",
-    },
-    total: ""
-}
