@@ -1,12 +1,8 @@
-import { ChangeEvent, useMemo } from "react";
-import { PriceUnit } from "types/form.ts";
-import { generateID } from "@utils/stepUtils.ts";
-import {
-  CheckBox,
-  WrapCheckBox,
-  WrapPrice,
-  WrapText,
-} from "./checkboxCardStyles.ts";
+import {ChangeEvent, useMemo} from "react";
+import {PriceUnit} from "types/form.ts";
+import {generateID} from "@utils/stepUtils.ts";
+import {CheckBox, WrapCheckBox, WrapPrice, WrapText,} from "./checkboxCardStyles.ts";
+import {formatCost} from "@utils/formUtils.ts";
 
 interface CheckboxCardProps {
   isChecked: boolean;
@@ -27,6 +23,7 @@ export function CheckboxCard({
 }: CheckboxCardProps) {
   const price = formatCost(cost, unit);
   const checkboxID = useMemo(() => `checkbox-${generateID()}`, []);
+
   return (
     <label htmlFor={checkboxID}>
       <WrapCheckBox isChecked={isChecked}>
@@ -46,15 +43,4 @@ export function CheckboxCard({
       </WrapCheckBox>
     </label>
   );
-}
-
-function formatCost(cost: number, unit: PriceUnit) {
-  switch (unit) {
-    case PriceUnit.MONTHLY:
-      return `+$${cost}/mo`;
-    case PriceUnit.YEARLY:
-      return `+$${cost}/yr`;
-    default:
-      return `+$${cost}`;
-  }
 }
