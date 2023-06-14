@@ -1,3 +1,5 @@
+import "./stepIndicator.scss"
+
 type Props = {
   isActive: boolean
   stepNumber: number

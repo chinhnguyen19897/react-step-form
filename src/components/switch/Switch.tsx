@@ -1,4 +1,5 @@
 import { Switch as HeadlessSwitch } from "@headlessui/react"
+import "./switch.scss"
 
 type SwitchProps = {
   checked: boolean

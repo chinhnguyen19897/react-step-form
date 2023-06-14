@@ -3,7 +3,7 @@ import { useContext } from "react"
 import { Card } from "@components/card/Card.tsx"
 import { EPriceUnit } from "types/form.ts"
 import { Switch } from "@components/switch/Switch.tsx"
-import "./styles.scss"
+import "./selectPlanForm.scss"
 
 export const SelectPlanForm = () => {
   const formAPI = useContext(StepFormContext)
