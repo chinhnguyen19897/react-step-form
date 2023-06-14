@@ -1,14 +1,14 @@
-import { EPriceUnit } from "types/form.ts"
-import { formatPrice } from "@utils/format"
+import { EPriceUnit } from "types/form.ts";
+import { formatPrice } from "@utils/format";
 
 type CardProps = {
-  icon: string
-  title: string
-  price: string
-  units: EPriceUnit
-  isActive: boolean
-  onClick: () => void
-}
+  icon: string;
+  title: string;
+  price: string;
+  units: EPriceUnit;
+  isActive: boolean;
+  onClick: () => void;
+};
 export const Card = ({
   icon,
   title,
@@ -17,8 +17,8 @@ export const Card = ({
   onClick,
   isActive,
 }: CardProps) => {
-  const prices = formatPrice(price, units)
-  const yearly = units === EPriceUnit.YEARLY
+  const prices = formatPrice(price, units);
+  const yearly = units === EPriceUnit.YEARLY;
 
   return (
     <section
@@ -32,5 +32,5 @@ export const Card = ({
         {yearly && <p>2 months free</p>}
       </section>
     </section>
-  )
-}
+  );
+};
