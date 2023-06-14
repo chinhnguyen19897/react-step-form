@@ -18,9 +18,6 @@ export const FormInput = React.forwardRef<HTMLInputElement, IFormInputProps>(
     const errorMessage = required
       ? "This field is required"
       : `Invalid ${props.name}`
-    const propsWithoutClassName = { ...props }
-    delete propsWithoutClassName.className
-    delete propsWithoutClassName.error
     return (
       <section>
         <section className="input-label">

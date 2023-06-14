@@ -31,13 +31,13 @@ export type StepFormContextType = {
   }
   planInfo: {
     isPlanActive: (id: number) => boolean
-    getAllPlans: () => PlanInfo
+    getAllPlans: () => PlanItem
     setPlanAsActive: (id: number) => void
     pricingUnit: EPriceUnit
     togglePricingUnit: () => void
   }
   addOnInfo: {
-    getAllAddons: () => AddonInfo
+    getAllAddons: () => AddonItem
     isActiveAddon: (id: number) => boolean
     addOrRemoveAddon: (id: number, remove: boolean) => void
   }
@@ -50,7 +50,7 @@ export type PersonalInfo = {
   phone: string
 }
 
-export type PlanInfo = {
+export type PlanItem = {
   id: number
   icon: string
   title: string
@@ -58,7 +58,7 @@ export type PlanInfo = {
   yearlyCost: string
 }[]
 
-export type AddonInfo = {
+export type AddonItem = {
   id: number
   title: string
   subtitle: string
