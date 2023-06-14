@@ -1,6 +1,4 @@
-import styled from "@emotion/styled";
-
-export const NavbarStyled = styled.nav`
+.navbar {
   background: #18488e;
   padding: 20px 30px;
 
@@ -15,4 +13,4 @@ export const NavbarStyled = styled.nav`
   a {
     color: #FFFFFF;
   }
-`
+}

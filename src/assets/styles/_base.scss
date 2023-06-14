@@ -1,0 +1,17 @@
+@import "variable";
+@import "custom/layout/sidebar";
+@import "../styles/custom/components/form.scss";
+@import "../styles/custom/components/button.scss";
+@import "custom/layout/header";
+
+
+
+
+.text-marine-blue {
+    color: var($color-marine-blue);
+}
+
+.text-light-gray {
+    color: var($color-light-gray);
+}
+

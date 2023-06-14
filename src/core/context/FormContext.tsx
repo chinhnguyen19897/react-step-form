@@ -1,8 +1,13 @@
-import React, { useState } from "react";
-import { PersonalInfo, PriceUnit, StepFormContextType } from "types/form.ts";
-import { personInfo } from "@pages/form/dataForm.ts";
-import { useForm } from "react-hook-form";
-import { AddOns, PLANS, STEP_INFO } from "@utils/stepUtils.ts";
+import React, {useState} from "react";
+import {PersonalInfo, PriceUnit, StepFormContextType} from "types/form.ts";
+import {useForm} from "react-hook-form";
+import {AddOns, PLANS, STEP_INFO} from "@utils/stepUtils.ts";
+
+const personInfo: PersonalInfo = {
+  name: "",
+  phone: "",
+  email: "",
+}
 
 export const StepFormContext = React.createContext<StepFormContextType>(null);
 
@@ -11,8 +16,8 @@ export const useStepForm = (maxSteps: number) => {
   const [stepNumber, setStepNumber] = useState(1);
   const [personalInfoData, setPersonalInfoData] =
     useState<PersonalInfo>(personInfo);
-  const [activePlan, setActivePlan] = useState("1");
-  const [pricingType, setPricingType] = useState<PriceUnit>(PriceUnit.MONTHLY);
+  const [selectPlan, setSelectPlan] = useState("1");
+  const [pricingUnit, setPricingUnit] = useState<PriceUnit>(PriceUnit.MONTHLY);
   const [activeAddons, setActiveAddons] = useState<string[]>([]);
 
   const {
@@ -83,18 +88,18 @@ export const useStepForm = (maxSteps: number) => {
     }
   };
   const isPlanActive = (id: string) => {
-    return activePlan === id;
+    return selectPlan === id;
   };
 
   const setPlanAsActive = (id: string) => {
-    return setActivePlan(id);
+    return setSelectPlan(id);
   };
 
   const togglePricingType = () => {
-    if (pricingType === PriceUnit.MONTHLY) {
-      setPricingType(PriceUnit.YEARLY);
+    if (pricingUnit === PriceUnit.MONTHLY) {
+      setPricingUnit(PriceUnit.YEARLY);
     } else {
-      setPricingType(PriceUnit.MONTHLY);
+      setPricingUnit(PriceUnit.MONTHLY);
     }
   };
 
@@ -114,21 +119,21 @@ export const useStepForm = (maxSteps: number) => {
   };
 
   const getFormSummary = () => {
-    const chosenPlan = PLANS.find((plan) => plan.id === activePlan);
+    const chosenPlan = PLANS.find((plan) => plan.id === selectPlan);
     const chosenAddons = AddOns.filter((addOn) =>
       activeAddons.includes(addOn.id),
     ).map((addOn) => ({
       name: addOn.title,
       price:
-        pricingType === PriceUnit.MONTHLY
+        pricingUnit === PriceUnit.MONTHLY
           ? addOn.monthlyCost
           : addOn.yearlyCost,
     }));
     const state = {
       plan: chosenPlan?.title,
-      unit: pricingType,
+      unit: pricingUnit,
       planPrice:
-        pricingType === PriceUnit.MONTHLY
+        pricingUnit === PriceUnit.MONTHLY
           ? chosenPlan?.monthlyCost
           : chosenPlan?.yearlyCost,
       addOns: chosenAddons,
@@ -163,7 +168,7 @@ export const useStepForm = (maxSteps: number) => {
       getAllPlans,
       isPlanActive,
       setPlanAsActive,
-      pricingType,
+      pricingUnit,
       togglePricingType,
     },
     addOnInfo: {
