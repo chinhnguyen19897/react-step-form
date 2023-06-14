@@ -10,8 +10,8 @@ export interface CurrentStepInfo {
 }
 
 export enum PriceUnit {
-  YEARLY = "YEARLY",
-  MONTHLY = "MONTHLY",
+  YEARLY,
+  MONTHLY,
 }
 
 export type StepFormContextType = {

@@ -20,11 +20,11 @@ export const SelectPlanForm = () => {
               icon={icon}
               title={title}
               price={
-                formAPI?.planInfo.pricingType === PriceUnit.MONTHLY
+                formAPI?.planInfo.pricingUnit === PriceUnit.MONTHLY
                   ? monthlyCost
                   : yearlyCost
               }
-              units={formAPI?.planInfo.pricingType}
+              units={formAPI?.planInfo.pricingUnit}
               isActive={formAPI?.planInfo.isPlanActive(plan.id)}
               onClick={() => formAPI?.planInfo.setPlanAsActive(plan.id)}
             />
@@ -35,8 +35,8 @@ export const SelectPlanForm = () => {
         <Switch
           leftLabel="Monthly"
           rightLabel="Yearly"
-          onChange={() => formAPI?.planInfo.togglePricingType()}
-          checked={formAPI?.planInfo.pricingType === PriceUnit.YEARLY}
+          onChange={() => formAPI?.planInfo.togglePricingUnit()}
+          checked={formAPI?.planInfo.pricingUnit === PriceUnit.YEARLY}
         />
       </section>
     </>

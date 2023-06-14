@@ -1,9 +1,15 @@
+//variables
 @import "variable";
+
+//styles layout
 @import "custom/layout/sidebar";
+@import "custom/layout/header";
+
+
+//styles components
 @import "../styles/custom/components/form.scss";
 @import "../styles/custom/components/button.scss";
 @import "../styles/custom/components/step.scss";
 @import "../styles/custom/components/forminput.scss";
 @import "../styles/custom/components/switch.scss";
 @import "../styles/custom/components/card.scss";
-@import "custom/layout/header";
