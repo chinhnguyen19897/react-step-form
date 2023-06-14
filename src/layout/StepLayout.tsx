@@ -1,13 +1,14 @@
-import { ReactNode, useContext } from "react";
-import { StepFormContext } from "context/FormContext.tsx";
+import { ReactNode, useContext } from "react"
+import { StepFormContext } from "context/FormContext.tsx"
+import { Button } from "@components/button/Button.tsx"
 
 type StepFormProps = {
-  heading: string;
-  subheading: string;
-  isLast: boolean;
-  isFirst: boolean;
-  children: ReactNode;
-};
+  heading: string
+  subheading: string
+  isLast: boolean
+  isFirst: boolean
+  children: ReactNode
+}
 
 const StepForm = ({
   children,
@@ -16,11 +17,11 @@ const StepForm = ({
   subheading,
   heading,
 }: StepFormProps) => {
-  const formAPI = useContext(StepFormContext);
-  const showHeaderFooter = formAPI?.step != 5 || false;
+  const formAPI = useContext(StepFormContext)
+  const showHeaderFooter = formAPI?.step != 5 || false
   const handleSubmit = async () => {
-    formAPI?.getSubmitHandler();
-  };
+    formAPI?.getSubmitHandler()
+  }
   return (
     <section id="step-section" className="step-form">
       {showHeaderFooter && (
@@ -33,25 +34,25 @@ const StepForm = ({
       {showHeaderFooter && (
         <footer className="step-form--footer">
           {!isFirst && (
-            <button
+            <Button
               onClick={() => {
-                formAPI?.prevStep();
+                formAPI?.prevStep()
               }}
               className="btn button-prev"
             >
               Go Back
-            </button>
+            </Button>
           )}
-          <button
+          <Button
             onClick={handleSubmit}
             className="btn btn-primary button-next"
           >
             {isLast ? "Confirm" : "Next Step"}
-          </button>
+          </Button>
         </footer>
       )}
     </section>
-  );
-};
+  )
+}
 
-export default StepForm;
+export default StepForm

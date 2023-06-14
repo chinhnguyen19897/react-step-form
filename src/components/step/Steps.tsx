@@ -1,4 +1,5 @@
 import { StepIndicator } from "@components/step-indicator/StepIndicator.tsx"
+import "./step.scss"
 
 type StepProps = {
   activeStep: number

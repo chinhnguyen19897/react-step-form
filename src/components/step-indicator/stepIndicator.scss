@@ -1,0 +1,37 @@
+.step-indicator--wrapper {
+  display: flex;
+  align-items: center;
+}
+.step-indicator--title {
+   margin-left: 20px;
+  .step-title {
+      text-transform: uppercase;
+      font-size: 12px;
+      line-height: 16px;
+      color: #D6D9E6;
+  }
+  .step-subtitle {
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #fff;
+      font-size: 16px;
+  }
+}
+
+.step-number {
+  border: 1px solid #FFFF;
+  background-color: transparent;
+  color: #FFFFFF;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 40px;
+}
+
+.step-number.active {
+  border: 1px solid #BFE2FD;
+  background-color: #BFE2FD;
+  color: #000000;
+}

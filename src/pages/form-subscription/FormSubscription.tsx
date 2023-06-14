@@ -2,17 +2,17 @@ import { SideBar } from "@layout/SideBar.tsx"
 import Steps from "@components/step/Steps.tsx"
 import { StepFormContext, useStepForm } from "context/FormContext.tsx"
 import StepForm from "@layout/StepLayout.tsx"
-import { PersonalForm } from "@components/form-custom/personal-form/PersonalForm"
-import { SelectPlanForm } from "@components/form-custom/select-plan-form/SelectPlanForm"
-import AddonsForm from "@components/form-custom/addons-form/AddonsForm.tsx"
-import SummaryForm from "@components/form-custom/summary-form/SummaryForm.tsx"
-import ThankYouForm from "@components/form-custom/thank-you-form/ThankYouForm.tsx"
+import { PersonalForm } from "@pages/form-subscription/components/personal-form/PersonalForm.tsx"
+import { SelectPlanForm } from "@pages/form-subscription/components/select-plan-form/SelectPlanForm.tsx"
+import AddonsForm from "@pages/form-subscription/components/addons-form/AddonsForm.tsx"
+import SummaryForm from "@pages/form-subscription/components/summary-form/SummaryForm.tsx"
+import ThankYouForm from "@pages/form-subscription/components/thank-you-form/ThankYouForm.tsx"
+import "./formSubscription.scss"
 
-export const Form = () => {
+export const FormSubscription = () => {
   const stepForm = useStepForm(5)
   const stepFormProps = { ...stepForm.getCurrentStepInfo() }
   return (
-    // TODO: lỗi fix đi a =)))
     <StepFormContext.Provider value={stepForm}>
       <section className="form-wrapper">
         <SideBar>

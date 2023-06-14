@@ -1,5 +1,6 @@
 import React, { useId, useMemo } from "react"
 import { FieldError, UseFormRegisterReturn } from "react-hook-form"
+import "./formInput.scss"
 
 interface IFormInputProps extends UseFormRegisterReturn {
   type: string

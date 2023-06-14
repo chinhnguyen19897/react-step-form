@@ -1,5 +1,5 @@
-import { Form } from "@pages/form/Form.tsx"
 import { Home } from "@pages/home/Home.tsx"
+import { FormSubscription } from "@pages/form-subscription/FormSubscription.tsx"
 
 const routerData = [
   {
@@ -8,9 +8,9 @@ const routerData = [
     title: "Home",
   },
   {
-    path: "/step-form",
-    element: <Form />,
-    title: "form Person",
+    path: "/form-subscription",
+    element: <FormSubscription />,
+    title: "Form Subscription",
   },
 ]
 
