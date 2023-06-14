@@ -1,5 +1,4 @@
-import styled from "@emotion/styled";
-
+import styled from "@emotion/styled"
 
 export const PersonalFormWrapper = styled.section`
   flex: 1 1 auto;

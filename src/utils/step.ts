@@ -23,7 +23,7 @@ export const STEP_INFO = [
     heading: "Finishing up",
     subheading: "Double check everything looks OK before confirming.",
   },
-];
+]
 
 export const PLANS = [
   {
@@ -47,7 +47,7 @@ export const PLANS = [
     monthlyCost: "15",
     yearlyCost: "150",
   },
-];
+]
 
 export const AddOns = [
   {
@@ -71,4 +71,4 @@ export const AddOns = [
     monthlyCost: "2",
     yearlyCost: "20",
   },
-];
+]

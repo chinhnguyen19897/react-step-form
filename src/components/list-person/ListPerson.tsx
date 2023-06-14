@@ -1,9 +1,3 @@
-
 export const ListPerson = () => {
-
-    return (
-        <div>
-        </div>
-    );
-};
-
+  return <div />
+}

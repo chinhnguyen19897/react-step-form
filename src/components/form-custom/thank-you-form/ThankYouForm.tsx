@@ -1,15 +1,15 @@
-import { useContext } from "react";
-import { StepFormContext } from "@core/context/FormContext.tsx";
-import { FormWrapper } from "@components/form-custom/thank-you-form/thankYouFormStyles.ts";
+import { useContext } from "react"
+import { StepFormContext } from "@core/context/FormContext.tsx"
+import { FormWrapper } from "@components/form-custom/thank-you-form/thankYouFormStyles.ts"
 
 const ThankYouForm = () => {
-  const formAPI = useContext(StepFormContext);
+  const formAPI = useContext(StepFormContext)
 
-  const formSummary = formAPI?.getFormSummary();
-  const personalData = formAPI?.personalInfo.personalData;
-  console.log(personalData, formSummary);
+  const formSummary = formAPI?.getFormSummary()
+  const personalData = formAPI?.personalInfo.personalData
+  console.log(personalData, formSummary)
 
-  if (formAPI?.step !== 5) return <></>;
+  if (formAPI?.step !== 5) return <></>
 
   return (
     <>
@@ -23,6 +23,6 @@ const ThankYouForm = () => {
         </p>
       </FormWrapper>
     </>
-  );
-};
-export default ThankYouForm;
+  )
+}
+export default ThankYouForm

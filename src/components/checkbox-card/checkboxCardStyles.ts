@@ -1,8 +1,8 @@
-import styled from "@emotion/styled";
+import styled from "@emotion/styled"
 
 type isChecked = {
-  isChecked: boolean;
-};
+  isChecked: boolean
+}
 export const WrapCheckBox = styled.section<isChecked>`
   &:hover {
     border-color: rgb(71 61 255 / 1);
@@ -19,7 +19,7 @@ export const WrapCheckBox = styled.section<isChecked>`
   border-radius: 10px;
   cursor: pointer;
   margin: 16px 0;
-`;
+`
 
 export const CheckBox = styled.div`
   margin-left: 0.75rem;
@@ -48,7 +48,7 @@ export const CheckBox = styled.div`
       background-color: rgb(71 61 255 / 1);
     }
   }
-`;
+`
 
 export const WrapText = styled.div`
   letter-spacing: 0.5rem;
@@ -66,9 +66,9 @@ export const WrapText = styled.div`
       font-weight: 400;
     }
   }
-`;
+`
 
 export const WrapPrice = styled.div`
   color: rgb(71 61 255 / 1);
   margin-right: 0.75rem;
-`;
+`

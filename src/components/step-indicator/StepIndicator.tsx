@@ -2,13 +2,13 @@ import {
   StepIndicatorNumber,
   StepIndicatorTitle,
   StepIndicatorWrapper,
-} from "@components/step-indicator/stepIndicatorStyles.ts";
+} from "@components/step-indicator/stepIndicatorStyles.ts"
 
 type Props = {
-  isActive: boolean;
-  stepNumber: number;
-  title: string;
-};
+  isActive: boolean
+  stepNumber: number
+  title: string
+}
 
 export const StepIndicator = ({ isActive, stepNumber, title }: Props) => {
   return (
@@ -21,5 +21,5 @@ export const StepIndicator = ({ isActive, stepNumber, title }: Props) => {
         <h2 className="step-subtitle">{title}</h2>
       </StepIndicatorTitle>
     </StepIndicatorWrapper>
-  );
-};
+  )
+}

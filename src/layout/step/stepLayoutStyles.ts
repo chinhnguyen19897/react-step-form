@@ -1,5 +1,4 @@
-import styled from "@emotion/styled";
-
+import styled from "@emotion/styled"
 
 export const StepFormStyled = styled.section`
   max-width: 36rem;
@@ -17,12 +16,12 @@ export const StepFormStyled = styled.section`
     font-size: 30px;
     line-height: 36px;
     font-weight: 700;
-    color: #02295A;
+    color: #02295a;
     margin: 0;
   }
   h2 {
     margin-top: 8px;
-    color: #9699AB;
+    color: #9699ab;
     font-size: 16px;
     font-weight: 300;
   }
@@ -43,7 +42,7 @@ export const StepFormFooter = styled.footer`
   display: flex;
   .button-prev {
     background-color: transparent;
-    color: #9699AB;
+    color: #9699ab;
   }
   .button-next {
     margin-left: auto;

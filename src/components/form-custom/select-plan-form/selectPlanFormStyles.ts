@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from "@emotion/styled"
 
 export const SelectPlanFormWrapper = styled.div`
   display: flex;
@@ -41,10 +41,10 @@ export const SelectPlanFormSwitch = styled.div`
       transition: all 200ms;
     }
   }
-  .translate-x-1 span{
-      transform: translate(-3px , 0%);
-    }
-    .translate-x-6 span {
-      transform: translate(14px, 0%)
-    }
+  .translate-x-1 span {
+    transform: translate(-3px, 0%);
+  }
+  .translate-x-6 span {
+    transform: translate(14px, 0%);
+  }
 `

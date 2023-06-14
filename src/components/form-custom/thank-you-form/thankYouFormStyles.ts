@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from "@emotion/styled"
 
 export const FormWrapper = styled.section`
   display: flex;
@@ -16,10 +16,10 @@ export const FormWrapper = styled.section`
     letter-spacing: 1px;
     font-weight: 700;
     font-size: 30px;
-    color: #02295A;
+    color: #02295a;
   }
   p {
-    color: #9699AB;
+    color: #9699ab;
     padding-bottom: 0;
     margin: 0;
   }

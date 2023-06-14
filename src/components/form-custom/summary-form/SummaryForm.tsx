@@ -1,10 +1,10 @@
-import { StepFormContext } from "@core/context/FormContext.tsx";
-import { useContext } from "react";
+import { StepFormContext } from "@core/context/FormContext.tsx"
+import { useContext } from "react"
 import {
   formatPrice,
   formatToLowerCase,
   formatToPacalCase,
-} from "@utils/format";
+} from "@utils/format"
 import {
   ChangePlanLink,
   SummaryFormInfo,
@@ -12,14 +12,14 @@ import {
   SummaryTotalServicesPrice,
   TitlePlan,
   TotalPerMonth,
-} from "@components/form-custom/summary-form/summaryFormStyles.ts";
+} from "@components/form-custom/summary-form/summaryFormStyles.ts"
 
 const SummaryForm = () => {
-  const formAPI = useContext(StepFormContext);
+  const formAPI = useContext(StepFormContext)
 
-  if (formAPI?.step !== 4) return <></>;
+  if (formAPI?.step !== 4) return <></>
 
-  const stateSummaryForm = formAPI.getFormSummary();
+  const stateSummaryForm = formAPI.getFormSummary()
 
   // const unitString = stateSummaryForm?.unit === EPriceUnit.MONTHLY ? "Monthly" : "Yearly";
   //   const totalUnitString =
@@ -41,7 +41,7 @@ const SummaryForm = () => {
           <h2>
             {formatPrice(
               stateSummaryForm?.planPrice || "",
-              stateSummaryForm?.unit,
+              stateSummaryForm?.unit
             )}
           </h2>
         </SummaryTotalPlanPrice>
@@ -60,6 +60,6 @@ const SummaryForm = () => {
         <h2>{formatPrice(stateSummaryForm.total, stateSummaryForm.unit)}</h2>
       </TotalPerMonth>
     </>
-  );
-};
-export default SummaryForm;
+  )
+}
+export default SummaryForm

@@ -1,22 +1,22 @@
-import {StepFormContext} from "@core/context/FormContext.tsx";
-import {useContext} from "react";
-import {Card} from "@components/card/Card.tsx";
-import {EPriceUnit} from "types/form.ts";
-import {Switch} from "@components/switch/Switch.tsx";
+import { StepFormContext } from "@core/context/FormContext.tsx"
+import { useContext } from "react"
+import { Card } from "@components/card/Card.tsx"
+import { EPriceUnit } from "types/form.ts"
+import { Switch } from "@components/switch/Switch.tsx"
 import {
-    SelectPlanFormSwitch,
-    SelectPlanFormWrapper,
-} from "@components/form-custom/select-plan-form/selectPlanFormStyles.ts";
+  SelectPlanFormSwitch,
+  SelectPlanFormWrapper,
+} from "@components/form-custom/select-plan-form/selectPlanFormStyles.ts"
 
 export const SelectPlanForm = () => {
-  const formAPI = useContext(StepFormContext);
-  const allPlans = formAPI?.planInfo.getAllPlans();
-  if (formAPI?.step !== 2) return <></>;
+  const formAPI = useContext(StepFormContext)
+  const allPlans = formAPI?.planInfo.getAllPlans()
+  if (formAPI?.step !== 2) return <></>
   return (
     <>
       <SelectPlanFormWrapper>
         {allPlans?.map((plan) => {
-          const { id, icon, monthlyCost, title, yearlyCost } = plan;
+          const { id, icon, monthlyCost, title, yearlyCost } = plan
           return (
             <Card
               key={id}
@@ -31,7 +31,7 @@ export const SelectPlanForm = () => {
               isActive={formAPI?.planInfo.isPlanActive(plan.id)}
               onClick={() => formAPI?.planInfo.setPlanAsActive(plan.id)}
             />
-          );
+          )
         })}
       </SelectPlanFormWrapper>
       <SelectPlanFormSwitch>
@@ -43,5 +43,5 @@ export const SelectPlanForm = () => {
         />
       </SelectPlanFormSwitch>
     </>
-  );
-};
+  )
+}

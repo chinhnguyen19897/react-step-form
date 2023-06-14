@@ -1,19 +1,19 @@
-import { StepIndicator } from "@components/step-indicator/StepIndicator.tsx";
-import { SideBarStep } from "@assets/styles/sidebar/sideBarStyles.ts";
+import { StepIndicator } from "@components/step-indicator/StepIndicator.tsx"
+import { SideBarStep } from "@assets/styles/sidebar/sideBarStyles.ts"
 
 type StepProps = {
-  activeStep: number;
+  activeStep: number
   stepData: {
-    id: number;
-    title: string;
-  }[];
-};
+    id: number
+    title: string
+  }[]
+}
 
 const Steps = ({ stepData, activeStep }: StepProps) => {
   const isStepActive = (id: number) => {
-    if (activeStep <= 3) return id === activeStep;
-    return id >= 4;
-  };
+    if (activeStep <= 3) return id === activeStep
+    return id >= 4
+  }
   return (
     <SideBarStep>
       {stepData.map((step) => (
@@ -25,7 +25,7 @@ const Steps = ({ stepData, activeStep }: StepProps) => {
         />
       ))}
     </SideBarStep>
-  );
-};
+  )
+}
 
-export default Steps;
+export default Steps

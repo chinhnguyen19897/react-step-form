@@ -1,12 +1,12 @@
-import { useContext } from "react";
-import { EPriceUnit } from "types/form.ts";
-import { StepFormContext } from "@core/context/FormContext.tsx";
-import { CheckboxCard } from "@components/checkbox-card/CheckboxCard";
+import { useContext } from "react"
+import { EPriceUnit } from "types/form.ts"
+import { StepFormContext } from "@core/context/FormContext.tsx"
+import { CheckboxCard } from "@components/checkbox-card/CheckboxCard"
 
 const AddOnsForm = () => {
-  const formAPI = useContext(StepFormContext);
-  const allAddOns = formAPI?.addOnInfo.getAllAddOns();
-  if (formAPI?.step != 3) return <></>;
+  const formAPI = useContext(StepFormContext)
+  const allAddOns = formAPI?.addOnInfo.getAllAddOns()
+  if (formAPI?.step != 3) return <></>
 
   return (
     <>
@@ -18,19 +18,19 @@ const AddOnsForm = () => {
           cost={parseInt(
             formAPI.planInfo.pricingType === EPriceUnit.MONTHLY
               ? addOn.monthlyCost
-              : addOn.yearlyCost,
+              : addOn.yearlyCost
           )}
           isChecked={formAPI?.addOnInfo.isActiveAddon(addOn.id)}
           onChange={(e) => {
             formAPI?.addOnInfo.addOrRemoveAddon(
               addOn.id,
-              !(e.target as HTMLInputElement).checked,
-            );
+              !(e.target as HTMLInputElement).checked
+            )
           }}
           unit={formAPI?.planInfo.pricingType}
         />
       ))}
     </>
-  );
-};
-export default AddOnsForm;
+  )
+}
+export default AddOnsForm
