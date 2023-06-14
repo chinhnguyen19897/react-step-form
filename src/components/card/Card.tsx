@@ -1,5 +1,5 @@
 import { PriceUnit } from "types/form.ts";
-import { formatPrice } from "@utils/formUtils.ts";
+import { formatPrice } from "@utils/form.ts";
 
 type CardProps = {
   icon: string;
@@ -22,7 +22,7 @@ export const Card = ({
   return (
     <section
       onClick={onClick}
-      className={`"card-plan" ${isActive ? "active" : ""}`}
+      className={`card-plan ${isActive ? "active" : "no-active"}`}
     >
       <img src={icon} alt="icon" />
       <section>

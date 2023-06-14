@@ -1,11 +1,12 @@
 .sidebar-wrapper {
-  background-image: url("bg-sidebar-desktop.svg");
+  background-image: url('public/images/bg-sidebar-desktop.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   width: fit-content;
   min-width: 247px;
   height: 60%;
   min-height: 568px;
-  background-repeat: no-repeat;
-  background-size: cover;
   border-radius: 0.75rem 0 0 0.75rem;
   border-width: 20px;
   border-color: #ffffff;

@@ -2,16 +2,20 @@
 @import "custom/layout/sidebar";
 @import "../styles/custom/components/form.scss";
 @import "../styles/custom/components/button.scss";
+@import "../styles/custom/components/step.scss";
+@import "../styles/custom/components/forminput.scss";
+@import "../styles/custom/components/switch.scss";
+@import "../styles/custom/components/card.scss";
 @import "custom/layout/header";
 
 
 
 
 .text-marine-blue {
-    color: var($color-marine-blue);
+    color: $color-text-marine-blue;
 }
 
 .text-light-gray {
-    color: var($color-light-gray);
+    color: $color-text-light-gray;
 }
 

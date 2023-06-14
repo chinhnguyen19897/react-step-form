@@ -1,13 +1,13 @@
-import React, {useState} from "react";
-import {PersonalInfo, PriceUnit, StepFormContextType} from "types/form.ts";
-import {useForm} from "react-hook-form";
-import {AddOns, PLANS, STEP_INFO} from "@utils/stepUtils.ts";
+import React, { useState } from "react";
+import { PersonalInfo, PriceUnit, StepFormContextType } from "types/form.ts";
+import { useForm } from "react-hook-form";
+import { AddOns, PLANS, STEP_INFO } from "@utils/steps.ts";
 
 const personInfo: PersonalInfo = {
   name: "",
   phone: "",
   email: "",
-}
+};
 
 export const StepFormContext = React.createContext<StepFormContextType>(null);
 
@@ -95,7 +95,7 @@ export const useStepForm = (maxSteps: number) => {
     return setSelectPlan(id);
   };
 
-  const togglePricingType = () => {
+  const togglePricingUnit = () => {
     if (pricingUnit === PriceUnit.MONTHLY) {
       setPricingUnit(PriceUnit.YEARLY);
     } else {
@@ -121,7 +121,7 @@ export const useStepForm = (maxSteps: number) => {
   const getFormSummary = () => {
     const chosenPlan = PLANS.find((plan) => plan.id === selectPlan);
     const chosenAddons = AddOns.filter((addOn) =>
-      activeAddons.includes(addOn.id),
+      activeAddons.includes(addOn.id)
     ).map((addOn) => ({
       name: addOn.title,
       price:
@@ -169,7 +169,7 @@ export const useStepForm = (maxSteps: number) => {
       isPlanActive,
       setPlanAsActive,
       pricingUnit,
-      togglePricingType,
+      togglePricingUnit,
     },
     addOnInfo: {
       getAllAddons,
