@@ -12,7 +12,6 @@ export const Switch = ({
   leftLabel,
   rightLabel,
 }: SwitchProps) => {
-  console.log(checked);
   return (
     <HeadlessSwitch.Group>
       <HeadlessSwitch.Label
