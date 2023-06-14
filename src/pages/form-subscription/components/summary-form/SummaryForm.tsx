@@ -1,8 +1,11 @@
-import { StepFormContext } from "context/FormContext.tsx"
+import { StepFormContext } from "contexts/FormContext.tsx"
 import { useContext } from "react"
-import { formatPrice } from "@utils/form.ts"
 import "./summaryForm.scss"
-import { formatToLowerCase, formatToPacalCase } from "@utils/format"
+import {
+  formatPrice,
+  formatToLowerCase,
+  formatToPacalCase,
+} from "@utils/format"
 
 const SummaryForm = () => {
   const formAPI = useContext(StepFormContext)

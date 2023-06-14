@@ -1,5 +1,5 @@
 import { ReactNode, useContext } from "react"
-import { StepFormContext } from "context/FormContext.tsx"
+import { StepFormContext } from "@/contexts/FormContext.tsx"
 import { Button } from "@components/button/Button.tsx"
 
 type StepFormProps = {
