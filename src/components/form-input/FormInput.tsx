@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { FieldError, UseFormRegisterReturn } from "react-hook-form";
-import { generateID } from "@utils/stepUtils.ts";
+import { generateID } from "@utils/steps.ts";
 
 interface FormInputProps extends UseFormRegisterReturn {
   type: string;
@@ -21,19 +21,18 @@ export const FormInput = React.forwardRef<HTMLInputElement, FormInputProps>(
     delete propsWithoutClassName.className;
     delete propsWithoutClassName.error;
     return (
-      <>
+      <section>
         <section className="input-label">
           <label htmlFor={formID}>{props.label}</label>
           {props.error && <span className="error-massage">{errorMessage}</span>}
         </section>
         <input
           id={formID}
-          required={required}
           {...props}
           ref={ref}
-          className="form-input"
+          className={`form-input ${required ? "required" : ""}`}
         />
-      </>
+      </section>
     );
   }
 );

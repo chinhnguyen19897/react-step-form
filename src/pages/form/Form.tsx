@@ -1,7 +1,7 @@
 import { SideBar } from "@layout/SideBar.tsx";
 import Steps from "@components/step/Steps.tsx";
-import { StepFormContext, useStepForm } from "@core/context/FormContext.tsx";
-import StepForm from "@layout/step/StepLayout";
+import { StepFormContext, useStepForm } from "context/FormContext.tsx";
+import StepForm from "@layout/StepLayout.tsx";
 import { PersonalForm } from "@components/form-custom/personal-form/PersonalForm";
 import { SelectPlanForm } from "@components/form-custom/select-plan-form/SelectPlanForm";
 import { AddonsForm } from "@components/form-custom/addons-form/AddonsForm.tsx";

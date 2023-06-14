@@ -1,5 +1,4 @@
 import { StepIndicator } from "@components/step-indicator/StepIndicator.tsx";
-import { SideBarStep } from "@assets/styles/sidebar/sideBarStyles.ts";
 
 type StepProps = {
   activeStep: number;
@@ -15,7 +14,7 @@ const Steps = ({ stepData, activeStep }: StepProps) => {
     return id >= 4;
   };
   return (
-    <SideBarStep>
+    <section className="step-wrapper">
       {stepData.map((step) => (
         <StepIndicator
           key={step.id}
@@ -24,7 +23,7 @@ const Steps = ({ stepData, activeStep }: StepProps) => {
           stepNumber={step.id}
         />
       ))}
-    </SideBarStep>
+    </section>
   );
 };
 

@@ -1,12 +1,9 @@
-import {StepFormContext} from "@core/context/FormContext.tsx";
-import {useContext} from "react";
-import {Card} from "@components/card/Card.tsx";
-import {PriceUnit} from "types/form.ts";
-import {Switch} from "@components/switch/Switch.tsx";
-import {
-    SelectPlanFormSwitch,
-    SelectPlanFormWrapper,
-} from "@components/form-custom/select-plan-form/selectPlanFormStyles.ts";
+import { StepFormContext } from "context/FormContext.tsx";
+import { useContext } from "react";
+import { Card } from "@components/card/Card.tsx";
+import { PriceUnit } from "types/form.ts";
+import { Switch } from "@components/switch/Switch.tsx";
+import "./styles.scss";
 
 export const SelectPlanForm = () => {
   const formAPI = useContext(StepFormContext);
@@ -14,7 +11,7 @@ export const SelectPlanForm = () => {
   if (formAPI?.step !== 2) return <></>;
   return (
     <>
-      <SelectPlanFormWrapper>
+      <section className="form-plan">
         {allPlans?.map((plan) => {
           const { id, icon, monthlyCost, title, yearlyCost } = plan;
           return (
@@ -33,15 +30,15 @@ export const SelectPlanForm = () => {
             />
           );
         })}
-      </SelectPlanFormWrapper>
-      <SelectPlanFormSwitch>
+      </section>
+      <section className="switch-container">
         <Switch
           leftLabel="Monthly"
           rightLabel="Yearly"
           onChange={() => formAPI?.planInfo.togglePricingType()}
           checked={formAPI?.planInfo.pricingType === PriceUnit.YEARLY}
         />
-      </SelectPlanFormSwitch>
+      </section>
     </>
   );
 };

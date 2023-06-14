@@ -1,0 +1,49 @@
+.summary-form--info {
+  background-color: #f0f6ff;
+  padding: 24px 32px;
+  border-radius: 8px;
+  margin-top: 16px;
+  .total-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 12px;
+    h2 {
+       color: #02295A;
+      font-weight: 700;
+    }
+  }
+  .title-plan {
+    color: #02295A;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .change-plan {
+    text-decoration: underline;
+    color: #9699AB;
+  }
+}
+
+.total-service {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.form-total--price {
+  padding: 0 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    color: #9699ab;
+  }
+  h2 {
+    color: #473dff;
+    font-weight: 700;
+    margin-top: 0;
+  }
+}

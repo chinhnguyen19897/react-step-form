@@ -1,57 +1,58 @@
-import {StepFormContext} from "@core/context/FormContext.tsx";
-import {useContext} from "react";
-import {PriceUnit} from "types/form.ts";
-import {formatPrice} from "@utils/formUtils.ts";
-import {
-    ChangePlanLink,
-    SummaryFormInfo,
-    SummaryTotalPlanPrice,
-    SummaryTotalServicesPrice,
-    TitlePlan,
-    TotalPerMonth,
-} from "@components/form-custom/summary-form/summaryFormStyles.ts";
+import { StepFormContext } from "context/FormContext.tsx";
+import { useContext } from "react";
+import { PriceUnit } from "types/form.ts";
+import { formatPrice } from "@utils/form.ts";
+import "./styles.scss";
 
 export const SummaryForm = () => {
-    const formAPI = useContext(StepFormContext)
+  const formAPI = useContext(StepFormContext);
 
-    if (formAPI?.step !== 4) return <></>
+  if (formAPI?.step !== 4) return <></>;
 
-    const stateSummaryForm = formAPI.getFormSummary();
+  const stateSummaryForm = formAPI.getFormSummary();
 
+  const unitString =
+    stateSummaryForm?.unit === PriceUnit.MONTHLY ? "Monthly" : "Yearly";
+  const totalUnitString =
+    stateSummaryForm?.unit === PriceUnit.YEARLY ? "month" : "year";
 
-    const unitString = stateSummaryForm?.unit === PriceUnit.MONTHLY ? "Monthly" : "Yearly";
-    const totalUnitString = stateSummaryForm?.unit === PriceUnit.YEARLY ? "month" : "year"
-
-
-    return (
-        <>
-            <SummaryFormInfo>
-                <SummaryTotalPlanPrice>
-                    <div>
-                        <TitlePlan>{stateSummaryForm?.plan}&nbsp;({unitString})</TitlePlan>
-                        <ChangePlanLink href="#" onClick={() => formAPI?.goToStep(2)}>Change</ChangePlanLink>
-                    </div>
-                    <h2>
-                        {formatPrice(stateSummaryForm?.planPrice || "", stateSummaryForm?.unit)}
-                    </h2>
-                </SummaryTotalPlanPrice>
-                <hr/>
-                <div>
-                    {
-                        stateSummaryForm.addOns.map(addOn => (
-                            <SummaryTotalServicesPrice key={addOn.name}>
-                                <p>{addOn.name}</p>
-                                <p>+{formatPrice(addOn.price, stateSummaryForm.unit)}</p>
-                            </SummaryTotalServicesPrice>
-                        ))
-                    }
-                </div>
-            </SummaryFormInfo>
-            <TotalPerMonth>
-                <p>Total (per {totalUnitString})</p>
-                <h2>{formatPrice(stateSummaryForm.total, stateSummaryForm.unit)}</h2>
-            </TotalPerMonth>
-        </>
-    );
+  return (
+    <>
+      <div className="summary-form--info">
+        <div className="total-price">
+          <div>
+            <h3 className="title-plan">
+              {stateSummaryForm?.plan}&nbsp;({unitString})
+            </h3>
+            <a
+              className="change-plan"
+              href="#"
+              onClick={() => formAPI?.goToStep(2)}
+            >
+              Change
+            </a>
+          </div>
+          <h2>
+            {formatPrice(
+              stateSummaryForm?.planPrice || "",
+              stateSummaryForm?.unit
+            )}
+          </h2>
+        </div>
+        <hr />
+        <div>
+          {stateSummaryForm.addOns.map((addOn) => (
+            <h2 className="total-service" key={addOn.name}>
+              <p>{addOn.name}</p>
+              <p>+{formatPrice(addOn.price, stateSummaryForm.unit)}</p>
+            </h2>
+          ))}
+        </div>
+      </div>
+      <div className="form-total--price">
+        <p>Total (per {totalUnitString})</p>
+        <h2>{formatPrice(stateSummaryForm.total, stateSummaryForm.unit)}</h2>
+      </div>
+    </>
+  );
 };
-
