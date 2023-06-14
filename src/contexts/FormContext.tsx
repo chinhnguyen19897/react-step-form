@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { PersonalInfo, EPriceUnit, StepFormContextType } from "types/form.ts"
 import { useForm } from "react-hook-form"
-import { AddOns, PLANS, STEP_INFO } from "@utils/steps.ts"
+import { AddOns, PLANS, STEP_INFO } from "@utils/step.ts"
 
 const personInfo: PersonalInfo = {
   name: "",

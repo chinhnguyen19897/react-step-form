@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { StepFormContext } from "context/FormContext.tsx"
+import { StepFormContext } from "contexts/FormContext.tsx"
 import "./thankYouForm.scss"
 const ThankYouForm = () => {
   const formAPI = useContext(StepFormContext)

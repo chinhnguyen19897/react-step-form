@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { EPriceUnit } from "types/form.ts"
-import { StepFormContext } from "context/FormContext.tsx"
+import { StepFormContext } from "contexts/FormContext.tsx"
 import { CheckboxCard } from "@components/checkbox-card/CheckboxCard"
 
 const AddonsForm = () => {
