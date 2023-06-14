@@ -1,6 +1,6 @@
 import { FieldErrors, UseFormRegister } from "react-hook-form"
 
-export interface CurrentStepInfo {
+export interface ICurrentStepInfo {
   id: number
   title: string
   heading: string
@@ -21,8 +21,8 @@ export type StepFormContextType = {
   goToStep: (num: number) => void
   isLast: () => boolean
   isFirst: () => boolean
-  getCurrentStepInfo: () => CurrentStepInfo
-  getAllStepInfo: () => CurrentStepInfo[]
+  getCurrentStepInfo: () => ICurrentStepInfo
+  getAllStepInfo: () => ICurrentStepInfo[]
   getSubmitHandler: () => void
   personalInfo: {
     formRegister: UseFormRegister<PersonalInfo>
@@ -30,18 +30,18 @@ export type StepFormContextType = {
     personalData: PersonalInfo
   }
   planInfo: {
-    isPlanActive: (id: string) => boolean
-    getAllPlans: () => PlanItem
-    setPlanAsActive: (id: string) => void
-    pricingType: EPriceUnit
-    togglePricingType: () => void
+    isPlanActive: (id: number) => boolean
+    getAllPlans: () => PlanInfo
+    setPlanAsActive: (id: number) => void
+    pricingUnit: EPriceUnit
+    togglePricingUnit: () => void
   }
   addOnInfo: {
-    getAllAddOns: () => AddOnItem
-    isActiveAddon: (id: string) => boolean
-    addOrRemoveAddon: (id: string, remove: boolean) => void
+    getAllAddons: () => AddonInfo
+    isActiveAddon: (id: number) => boolean
+    addOrRemoveAddon: (id: number, remove: boolean) => void
   }
-  getFormSummary: () => FormSummaryItem
+  getFormSummary: () => FormSummaryInfo
 } | null
 
 export type PersonalInfo = {
@@ -50,23 +50,23 @@ export type PersonalInfo = {
   phone: string
 }
 
-export type PlanItem = {
-  id: string
+export type PlanInfo = {
+  id: number
   icon: string
   title: string
   monthlyCost: string
   yearlyCost: string
 }[]
 
-export type AddOnItem = {
-  id: string
+export type AddonInfo = {
+  id: number
   title: string
   subtitle: string
   monthlyCost: string
   yearlyCost: string
 }[]
 
-export type FormSummaryItem = {
+export type FormSummaryInfo = {
   plan?: string
   unit: EPriceUnit
   planPrice?: string
@@ -77,7 +77,7 @@ export type FormSummaryItem = {
   total: string
 }
 
-export type SummaryItem = {
+export type SummaryInfo = {
   plan?: string
   total?: string
 }

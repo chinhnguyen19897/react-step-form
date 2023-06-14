@@ -1,0 +1,26 @@
+.form-plan {
+  display: flex;
+  margin-top: 16px;
+  gap: 16px;
+  .card-plan {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid;
+  border-radius: 0.5rem;
+  align-items: start;
+  flex: 1 1 auto;
+  cursor: pointer;
+  img {
+    margin-bottom: 3rem;
+    max-width: 50px;
+    margin-right: 1.25rem;
+  }
+}
+.card-plan.no-active {
+    border-color:  #d6d9e6;
+}
+  .card-plan.active {
+    border-color: #473dff;
+  }
+}

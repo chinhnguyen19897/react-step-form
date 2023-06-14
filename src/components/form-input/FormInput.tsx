@@ -1,7 +1,7 @@
 import React, { useId, useMemo } from "react"
 import { FieldError, UseFormRegisterReturn } from "react-hook-form"
 
-interface FormInputProps extends UseFormRegisterReturn {
+interface IFormInputProps extends UseFormRegisterReturn {
   type: string
   placeholder: string
   label: string
@@ -9,7 +9,7 @@ interface FormInputProps extends UseFormRegisterReturn {
   error?: FieldError
 }
 
-export const FormInput = React.forwardRef<HTMLInputElement, FormInputProps>(
+export const FormInput = React.forwardRef<HTMLInputElement, IFormInputProps>(
   (props, ref) => {
     const newId = useId()
     const formID = useMemo(() => `form-input-${newId}`, [newId])
@@ -21,19 +21,18 @@ export const FormInput = React.forwardRef<HTMLInputElement, FormInputProps>(
     delete propsWithoutClassName.className
     delete propsWithoutClassName.error
     return (
-      <>
+      <section>
         <section className="input-label">
           <label htmlFor={formID}>{props.label}</label>
           {props.error && <span className="error-massage">{errorMessage}</span>}
         </section>
         <input
           id={formID}
-          required={required}
           {...props}
           ref={ref}
-          className="form-input"
+          className={`form-input ${required ? "required" : ""}`}
         />
-      </>
+      </section>
     )
   }
 )

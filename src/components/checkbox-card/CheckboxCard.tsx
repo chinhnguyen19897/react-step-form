@@ -1,16 +1,10 @@
-import { useMemo, useId } from "react"
+import { ChangeEvent, useId, useMemo } from "react"
 import { EPriceUnit } from "types/form.ts"
-import {
-  CheckBox,
-  WrapCheckBox,
-  WrapPrice,
-  WrapText,
-} from "./checkboxCardStyles.ts"
-import { formatCost } from "@utils/format.ts"
+import { formatCost } from "@utils/form.ts"
 
-interface CheckboxCardProps {
+type CheckboxCardProps = {
   isChecked: boolean
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  onChange: (e: ChangeEvent) => void
   title: string
   subtitle: string
   cost: number
@@ -31,21 +25,22 @@ export function CheckboxCard({
 
   return (
     <label htmlFor={checkboxID}>
-      <WrapCheckBox isChecked={isChecked}>
-        <CheckBox>
+      <section className={`card-checkbox ${isChecked ? "active" : ""}`}>
+        <div className="check-box">
           <input
             type="checkbox"
             id={checkboxID}
             checked={isChecked}
             onChange={onChange}
+            className="checkbox-input"
           />
-        </CheckBox>
-        <WrapText>
+        </div>
+        <div className="card-checkbox--title">
           <h3>{title}</h3>
           <h3>{subtitle}</h3>
-        </WrapText>
-        <WrapPrice>{price}</WrapPrice>
-      </WrapCheckBox>
+        </div>
+        <div className="card-checkbox--price">{price}</div>
+      </section>
     </label>
   )
 }

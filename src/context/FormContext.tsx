@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { PersonalInfo, EPriceUnit, StepFormContextType } from "types/form.ts"
 import { useForm } from "react-hook-form"
-import { AddOns, PLANS, STEP_INFO } from "@utils/step.ts"
+import { AddOns, PLANS, STEP_INFO } from "@utils/steps.ts"
 
 const personInfo: PersonalInfo = {
   name: "",
@@ -94,7 +94,7 @@ export const useStepForm = (maxSteps: number) => {
     return setSelectPlan(id)
   }
 
-  const togglePricingType = () => {
+  const togglePricingUnit = () => {
     if (pricingUnit === EPriceUnit.MONTHLY) {
       setPricingUnit(EPriceUnit.YEARLY)
     } else {
@@ -168,7 +168,7 @@ export const useStepForm = (maxSteps: number) => {
       isPlanActive,
       setPlanAsActive,
       pricingUnit,
-      togglePricingType,
+      togglePricingUnit,
     },
     addOnInfo: {
       getAllAddons,

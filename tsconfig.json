@@ -13,7 +13,8 @@
       "@services/*": ["layout/*"],
       "@utils/*": ["utils/*"],
       "@types/*": ["types/*"],
-      "@core/*": ["core/*"]
+      "@core/*": ["core/*"],
+      "@styles/*": ["assets/styles/*"],
     },
     "types": ["node"],
     "module": "ESNext",

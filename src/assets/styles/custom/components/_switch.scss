@@ -1,12 +1,4 @@
-import styled from "@emotion/styled"
-
-export const SelectPlanFormWrapper = styled.div`
-  display: flex;
-  margin-top: 16px;
-  gap: 16px;
-`
-
-export const SelectPlanFormSwitch = styled.div`
+.switch-container {
   padding: 12px;
   background-color: #f0f6ff;
   display: flex;
@@ -47,4 +39,4 @@ export const SelectPlanFormSwitch = styled.div`
   .translate-x-6 span {
     transform: translate(14px, 0%);
   }
-`
+}

@@ -22,7 +22,7 @@ export const Card = ({
   return (
     <section
       onClick={onClick}
-      className={`"card-plan" ${isActive ? "active" : ""}`}
+      className={`card-plan ${isActive ? "active" : "no-active"}`}
     >
       <img src={icon} alt="icon" />
       <section>

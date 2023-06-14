@@ -1,8 +1,7 @@
 import { useContext } from "react"
-import { StepFormContext } from "@core/context/FormContext.tsx"
+import { StepFormContext } from "context/FormContext.tsx"
 import { FormInput } from "@components/form-input/FormInput.tsx"
 import { regExEmail, regExPhone } from "@utils/regex.ts"
-import { PersonalFormWrapper } from "@components/form-custom/personal-form/personalFormStyles.ts"
 
 export const PersonalForm = () => {
   const formAPI = useContext(StepFormContext)
@@ -13,7 +12,7 @@ export const PersonalForm = () => {
   if (formAPI?.step != 1) return <></>
   return (
     <>
-      <PersonalFormWrapper>
+      <section className="form-body">
         <FormInput
           label="Name"
           type="text"
@@ -43,7 +42,7 @@ export const PersonalForm = () => {
           })}
           error={errors?.phone}
         />
-      </PersonalFormWrapper>
+      </section>
     </>
   )
 }
