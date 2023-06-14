@@ -6,7 +6,7 @@ export const Home = () => {
       <section className="home-page">
         <section>
           <h2>Subscriber Plan</h2>
-          <Link to="/step-form">Get started</Link>
+          <Link to="/form-subscription">Get started</Link>
         </section>
       </section>
     </>

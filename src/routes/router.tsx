@@ -1,17 +1,25 @@
-import routerData from "./routerData.tsx"
-import { routerType } from "./router.types.ts"
-import { Route, Routes } from "react-router-dom"
+import { useRoutes } from "react-router-dom"
+import { Home } from "@pages/home/Home.tsx"
+import { FormSubscription } from "@pages/form-subscription/FormSubscription.tsx"
 import Main from "@layout/Main.tsx"
 
 const Router = () => {
-  const pageRoutes = routerData.map(({ path, title, element }: routerType) => {
-    return <Route key={title} path={`/${path}`} element={element} />
-  })
-  return (
-    <Routes>
-      <Route element={<Main />}>{pageRoutes}</Route>
-    </Routes>
-  )
+  return useRoutes([
+    {
+      path: "/",
+      element: <Main />,
+      children: [
+        {
+          path: "/home",
+          element: <Home />,
+        },
+        {
+          path: "/form-subscription",
+          element: <FormSubscription />,
+        },
+      ],
+    },
+  ])
 }
 
 export default Router
