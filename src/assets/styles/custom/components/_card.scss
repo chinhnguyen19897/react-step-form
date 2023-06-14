@@ -1,13 +1,8 @@
-import styled from "@emotion/styled";
-
-type CarProps = {
-  isActive: boolean;
-};
-export const CardStyles = styled.section<CarProps>`
+.card-plan {
   padding: 16px;
   display: flex;
   flex-direction: column;
-  border: 1px solid ${(props) => (props.isActive ? "#473dff" : "#d6d9e6")};
+  border: 1px solid #473dff;
   border-radius: 0.5rem;
   align-items: start;
   flex: 1 1 auto;
@@ -17,4 +12,8 @@ export const CardStyles = styled.section<CarProps>`
     max-width: 50px;
     margin-right: 1.25rem;
   }
-`;
+}
+
+.card-plan.active {
+  border: 1px solid #d6d9e6;
+}

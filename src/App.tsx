@@ -1,13 +1,13 @@
-import './App.css'
-import {BrowserRouter} from "react-router-dom";
+import "./app.scss";
+import { BrowserRouter } from "react-router-dom";
 import Router from "@core/routes/router.tsx";
 
 function App() {
-    return (
-            <BrowserRouter>
-                <Router/>
-            </BrowserRouter>
-    )
+  return (
+    <BrowserRouter>
+      <Router />
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
