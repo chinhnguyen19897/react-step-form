@@ -1,6 +1,6 @@
 import { ChangeEvent, useId, useMemo } from "react"
 import { EPriceUnit } from "types/form.ts"
-import { formatCost } from "@utils/form.ts"
+import { formatCost } from "@utils/format.ts"
 import "./checkboxCard.scss"
 
 type CheckboxCardProps = {
