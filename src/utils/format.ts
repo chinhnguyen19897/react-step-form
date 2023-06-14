@@ -21,3 +21,11 @@ export const formatCost = (cost: number, units: EPriceUnit) => {
       return `+$${cost}`
   }
 }
+
+export const formatToPacalCase = (text: string) => {
+  return text[0].toUpperCase() + text.slice(1).toLowerCase()
+}
+
+export const formatToLowerCase = (text: string) => {
+  return text.toLocaleLowerCase()
+}

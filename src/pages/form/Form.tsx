@@ -1,17 +1,18 @@
-import { SideBar } from "@layout/SideBar.tsx";
-import Steps from "@components/step/Steps.tsx";
-import { StepFormContext, useStepForm } from "context/FormContext.tsx";
-import StepForm from "@layout/StepLayout.tsx";
-import { PersonalForm } from "@components/form-custom/personal-form/PersonalForm";
-import { SelectPlanForm } from "@components/form-custom/select-plan-form/SelectPlanForm";
-import { AddonsForm } from "@components/form-custom/addons-form/AddonsForm.tsx";
-import { SummaryForm } from "@components/form-custom/summary-form/SummaryForm.tsx";
-import { ThankYouForm } from "@components/form-custom/thank-you-form/ThankYouForm.tsx";
+import { SideBar } from "@layout/SideBar.tsx"
+import Steps from "@components/step/Steps.tsx"
+import { StepFormContext, useStepForm } from "context/FormContext.tsx"
+import StepForm from "@layout/StepLayout.tsx"
+import { PersonalForm } from "@components/form-custom/personal-form/PersonalForm"
+import { SelectPlanForm } from "@components/form-custom/select-plan-form/SelectPlanForm"
+import AddonsForm from "@components/form-custom/addons-form/AddonsForm.tsx"
+import SummaryForm from "@components/form-custom/summary-form/SummaryForm.tsx"
+import ThankYouForm from "@components/form-custom/thank-you-form/ThankYouForm.tsx"
 
 export const Form = () => {
-  const stepForm = useStepForm(5);
-  const stepFormProps = { ...stepForm.getCurrentStepInfo() };
+  const stepForm = useStepForm(5)
+  const stepFormProps = { ...stepForm.getCurrentStepInfo() }
   return (
+    // TODO: lỗi fix đi a =)))
     <StepFormContext.Provider value={stepForm}>
       <section className="form-wrapper">
         <SideBar>
@@ -31,5 +32,5 @@ export const Form = () => {
         </section>
       </section>
     </StepFormContext.Provider>
-  );
-};
+  )
+}

@@ -1,8 +1,8 @@
-import { ReactNode } from "react";
+import { ReactNode } from "react"
 
 type Props = {
-  children: ReactNode;
-};
+  children: ReactNode
+}
 export const SideBar = ({ children }: Props) => {
-  return <nav className="sidebar-wrapper">{children}</nav>;
-};
+  return <nav className="sidebar-wrapper">{children}</nav>
+}

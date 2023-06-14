@@ -1,28 +1,23 @@
-import { StepFormContext } from "context/FormContext.tsx";
-import { useContext } from "react";
-import { PriceUnit } from "types/form.ts";
-import { formatPrice } from "@utils/form.ts";
-import "./styles.scss";
+import { StepFormContext } from "context/FormContext.tsx"
+import { useContext } from "react"
+import { formatPrice } from "@utils/form.ts"
+import "./styles.scss"
+import { formatToLowerCase, formatToPacalCase } from "@utils/format"
 
-export const SummaryForm = () => {
-  const formAPI = useContext(StepFormContext);
+const SummaryForm = () => {
+  const formAPI = useContext(StepFormContext)
 
-  if (formAPI?.step !== 4) return <></>;
+  if (formAPI?.step !== 4) return <></>
 
-  const stateSummaryForm = formAPI.getFormSummary();
-
-  const unitString =
-    stateSummaryForm?.unit === PriceUnit.MONTHLY ? "Monthly" : "Yearly";
-  const totalUnitString =
-    stateSummaryForm?.unit === PriceUnit.YEARLY ? "month" : "year";
-
+  const stateSummaryForm = formAPI.getFormSummary()
   return (
     <>
       <div className="summary-form--info">
         <div className="total-price">
           <div>
             <h3 className="title-plan">
-              {stateSummaryForm?.plan}&nbsp;({unitString})
+              {stateSummaryForm?.plan}&nbsp;(
+              {formatToPacalCase(stateSummaryForm?.unit)})
             </h3>
             <a
               className="change-plan"
@@ -50,9 +45,11 @@ export const SummaryForm = () => {
         </div>
       </div>
       <div className="form-total--price">
-        <p>Total (per {totalUnitString})</p>
+        <p>Total (per {formatToLowerCase(stateSummaryForm?.unit)})</p>
         <h2>{formatPrice(stateSummaryForm.total, stateSummaryForm.unit)}</h2>
       </div>
     </>
-  );
-};
+  )
+}
+
+export default SummaryForm

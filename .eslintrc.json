@@ -1,0 +1,43 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["plugin:@typescript-eslint/recommended", "prettier"],
+  "plugins": [
+    "@typescript-eslint/eslint-plugin",
+    "eslint-plugin-tsdoc",
+    "react",
+    "react-hooks",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "prettier/prettier": [
+      2,
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "tsdoc/syntax": [1],
+    // "quotes": [2, "single", { "allowTemplateLiterals": true }],
+    "react/prop-types": 0,
+    "linebreak-style": [2, "windows"],
+    "no-use-before-define": [0],
+    "@typescript-eslint/no-use-before-define": [1],
+    "@typescript-eslint/explicit-module-boundary-types": [0],
+    "@typescript-eslint/no-namespace": [0],
+    "@typescript-eslint/no-empty-function": [0],
+    "react-hooks/exhaustive-deps": [1],
+    "react/self-closing-comp": [2],
+    "react/jsx-key": [2],
+    "no-duplicate-case": "error"
+  }
+}

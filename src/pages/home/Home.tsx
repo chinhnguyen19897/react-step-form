@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 
 export const Home = () => {
   return (
@@ -10,5 +10,5 @@ export const Home = () => {
         </section>
       </section>
     </>
-  );
-};
+  )
+}

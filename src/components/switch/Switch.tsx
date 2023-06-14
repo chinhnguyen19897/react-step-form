@@ -1,11 +1,11 @@
-import { Switch as HeadlessSwitch } from "@headlessui/react";
+import { Switch as HeadlessSwitch } from "@headlessui/react"
 
 type SwitchProps = {
-  checked: boolean;
-  leftLabel: string;
-  rightLabel: string;
-  onChange: (value: boolean) => void;
-};
+  checked: boolean
+  leftLabel: string
+  rightLabel: string
+  onChange: (value: boolean) => void
+}
 export const Switch = ({
   checked,
   onChange,
@@ -38,5 +38,5 @@ export const Switch = ({
         {rightLabel}
       </HeadlessSwitch.Label>
     </HeadlessSwitch.Group>
-  );
-};
+  )
+}

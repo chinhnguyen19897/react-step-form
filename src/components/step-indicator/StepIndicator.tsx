@@ -1,8 +1,8 @@
 type Props = {
-  isActive: boolean;
-  stepNumber: number;
-  title: string;
-};
+  isActive: boolean
+  stepNumber: number
+  title: string
+}
 
 export const StepIndicator = ({ isActive, stepNumber, title }: Props) => {
   return (
@@ -15,5 +15,5 @@ export const StepIndicator = ({ isActive, stepNumber, title }: Props) => {
         <h2 className="step-subtitle">{title}</h2>
       </article>
     </section>
-  );
-};
+  )
+}

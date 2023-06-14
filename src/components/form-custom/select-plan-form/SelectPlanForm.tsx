@@ -1,26 +1,26 @@
-import { StepFormContext } from "context/FormContext.tsx";
-import { useContext } from "react";
-import { Card } from "@components/card/Card.tsx";
-import { PriceUnit } from "types/form.ts";
-import { Switch } from "@components/switch/Switch.tsx";
-import "./styles.scss";
+import { StepFormContext } from "context/FormContext.tsx"
+import { useContext } from "react"
+import { Card } from "@components/card/Card.tsx"
+import { EPriceUnit } from "types/form.ts"
+import { Switch } from "@components/switch/Switch.tsx"
+import "./styles.scss"
 
 export const SelectPlanForm = () => {
-  const formAPI = useContext(StepFormContext);
-  const allPlans = formAPI?.planInfo.getAllPlans();
-  if (formAPI?.step !== 2) return <></>;
+  const formAPI = useContext(StepFormContext)
+  const allPlans = formAPI?.planInfo.getAllPlans()
+  if (formAPI?.step !== 2) return <></>
   return (
     <>
       <section className="form-plan">
         {allPlans?.map((plan) => {
-          const { id, icon, monthlyCost, title, yearlyCost } = plan;
+          const { id, icon, monthlyCost, title, yearlyCost } = plan
           return (
             <Card
               key={id}
               icon={icon}
               title={title}
               price={
-                formAPI?.planInfo.pricingUnit === PriceUnit.MONTHLY
+                formAPI?.planInfo.pricingUnit === EPriceUnit.MONTHLY
                   ? monthlyCost
                   : yearlyCost
               }
@@ -28,7 +28,7 @@ export const SelectPlanForm = () => {
               isActive={formAPI?.planInfo.isPlanActive(plan.id)}
               onClick={() => formAPI?.planInfo.setPlanAsActive(plan.id)}
             />
-          );
+          )
         })}
       </section>
       <section className="switch-container">
@@ -36,9 +36,9 @@ export const SelectPlanForm = () => {
           leftLabel="Monthly"
           rightLabel="Yearly"
           onChange={() => formAPI?.planInfo.togglePricingUnit()}
-          checked={formAPI?.planInfo.pricingUnit === PriceUnit.YEARLY}
+          checked={formAPI?.planInfo.pricingUnit === EPriceUnit.YEARLY}
         />
       </section>
     </>
-  );
-};
+  )
+}

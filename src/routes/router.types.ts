@@ -1,7 +1,7 @@
-import {JSX} from "react";
+import { JSX } from "react"
 
 export interface routerType {
-    title: string;
-    path: string;
-    element: JSX.Element;
+  title: string
+  path: string
+  element: JSX.Element
 }

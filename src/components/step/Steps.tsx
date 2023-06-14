@@ -1,18 +1,18 @@
-import { StepIndicator } from "@components/step-indicator/StepIndicator.tsx";
+import { StepIndicator } from "@components/step-indicator/StepIndicator.tsx"
 
 type StepProps = {
-  activeStep: number;
+  activeStep: number
   stepData: {
-    id: number;
-    title: string;
-  }[];
-};
+    id: number
+    title: string
+  }[]
+}
 
 const Steps = ({ stepData, activeStep }: StepProps) => {
   const isStepActive = (id: number) => {
-    if (activeStep <= 3) return id === activeStep;
-    return id >= 4;
-  };
+    if (activeStep <= 3) return id === activeStep
+    return id >= 4
+  }
   return (
     <section className="step-wrapper">
       {stepData.map((step) => (
@@ -24,7 +24,7 @@ const Steps = ({ stepData, activeStep }: StepProps) => {
         />
       ))}
     </section>
-  );
-};
+  )
+}
 
-export default Steps;
+export default Steps

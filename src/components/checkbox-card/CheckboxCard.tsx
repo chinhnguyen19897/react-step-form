@@ -1,16 +1,15 @@
-import { ChangeEvent, useMemo } from "react";
-import { PriceUnit } from "types/form.ts";
-import { generateID } from "@utils/steps.ts";
-import { formatCost } from "@utils/form.ts";
+import { ChangeEvent, useId, useMemo } from "react"
+import { EPriceUnit } from "types/form.ts"
+import { formatCost } from "@utils/form.ts"
 
 type CheckboxCardProps = {
-  isChecked: boolean;
-  onChange: (e: ChangeEvent) => void;
-  title: string;
-  subtitle: string;
-  cost: number;
-  unit: PriceUnit;
-};
+  isChecked: boolean
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void
+  title: string
+  subtitle: string
+  cost: number
+  unit: EPriceUnit
+}
 
 export function CheckboxCard({
   cost,
@@ -20,8 +19,9 @@ export function CheckboxCard({
   title,
   subtitle,
 }: CheckboxCardProps) {
-  const price = formatCost(cost, unit);
-  const checkboxID = useMemo(() => `checkbox-${generateID()}`, []);
+  const price = formatCost(cost, unit)
+  const newId = useId()
+  const checkboxID = useMemo(() => `checkbox-${newId}`, [newId])
 
   return (
     <label htmlFor={checkboxID}>
@@ -42,5 +42,5 @@ export function CheckboxCard({
         <div className="card-checkbox--price">{price}</div>
       </section>
     </label>
-  );
+  )
 }

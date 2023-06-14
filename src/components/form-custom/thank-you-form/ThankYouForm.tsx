@@ -1,10 +1,10 @@
-import { useContext } from "react";
-import { StepFormContext } from "context/FormContext.tsx";
-import "./styles.scss";
-export const ThankYouForm = () => {
-  const formAPI = useContext(StepFormContext);
+import { useContext } from "react"
+import { StepFormContext } from "context/FormContext.tsx"
+import "./styles.scss"
+const ThankYouForm = () => {
+  const formAPI = useContext(StepFormContext)
 
-  if (formAPI?.step !== 5) return <></>;
+  if (formAPI?.step !== 5) return <></>
 
   return (
     <>
@@ -18,5 +18,6 @@ export const ThankYouForm = () => {
         </p>
       </section>
     </>
-  );
-};
+  )
+}
+export default ThankYouForm

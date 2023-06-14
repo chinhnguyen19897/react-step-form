@@ -1,13 +1,15 @@
-import { useContext } from "react";
-import { StepFormContext } from "context/FormContext.tsx";
-import { FormInput } from "@components/form-input/FormInput.tsx";
-import { regExEmail, regExPhone } from "@utils/regex.ts";
+import { useContext } from "react"
+import { StepFormContext } from "context/FormContext.tsx"
+import { FormInput } from "@components/form-input/FormInput.tsx"
+import { regExEmail, regExPhone } from "@utils/regex.ts"
 
 export const PersonalForm = () => {
-  const formAPI = useContext(StepFormContext);
-  const register = formAPI!.personalInfo.formRegister;
-  const errors = formAPI?.personalInfo.personalInfoErrors;
-  if (formAPI?.step != 1) return <></>;
+  const formAPI = useContext(StepFormContext)
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  const register = formAPI!.personalInfo.formRegister
+  const errors = formAPI?.personalInfo.personalInfoErrors
+
+  if (formAPI?.step != 1) return <></>
   return (
     <>
       <section className="form-body">
@@ -42,5 +44,5 @@ export const PersonalForm = () => {
         />
       </section>
     </>
-  );
-};
+  )
+}
