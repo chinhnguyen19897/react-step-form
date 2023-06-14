@@ -1,6 +1,6 @@
 import { FieldErrors, UseFormRegister } from "react-hook-form";
 
-export interface CurrentStepInfo {
+export interface ICurrentStepInfo {
   id: number;
   title: string;
   heading: string;
@@ -10,8 +10,8 @@ export interface CurrentStepInfo {
 }
 
 export enum PriceUnit {
-  YEARLY = "YEARLY",
-  MONTHLY = "MONTHLY",
+  YEARLY,
+  MONTHLY,
 }
 
 export type StepFormContextType = {
@@ -21,8 +21,8 @@ export type StepFormContextType = {
   goToStep: (num: number) => void;
   isLast: () => boolean;
   isFirst: () => boolean;
-  getCurrentStepInfo: () => CurrentStepInfo;
-  getAllStepInfo: () => CurrentStepInfo[];
+  getCurrentStepInfo: () => ICurrentStepInfo;
+  getAllStepInfo: () => ICurrentStepInfo[];
   getSubmitHandler: () => void;
   personalInfo: {
     formRegister: UseFormRegister<PersonalInfo>;

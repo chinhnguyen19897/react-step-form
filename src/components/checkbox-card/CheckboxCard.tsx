@@ -3,14 +3,14 @@ import { PriceUnit } from "types/form.ts";
 import { generateID } from "@utils/steps.ts";
 import { formatCost } from "@utils/form.ts";
 
-interface CheckboxCardProps {
+type CheckboxCardProps = {
   isChecked: boolean;
   onChange: (e: ChangeEvent) => void;
   title: string;
   subtitle: string;
   cost: number;
   unit: PriceUnit;
-}
+};
 
 export function CheckboxCard({
   cost,

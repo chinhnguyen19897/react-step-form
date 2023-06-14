@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import { FieldError, UseFormRegisterReturn } from "react-hook-form";
 import { generateID } from "@utils/steps.ts";
 
-interface FormInputProps extends UseFormRegisterReturn {
+interface IFormInputProps extends UseFormRegisterReturn {
   type: string;
   placeholder: string;
   label: string;
@@ -10,7 +10,7 @@ interface FormInputProps extends UseFormRegisterReturn {
   error?: FieldError;
 }
 
-export const FormInput = React.forwardRef<HTMLInputElement, FormInputProps>(
+export const FormInput = React.forwardRef<HTMLInputElement, IFormInputProps>(
   (props, ref) => {
     const formID = useMemo(() => `form-input-${generateID()}`, []);
     const required = props.error?.type === "required";

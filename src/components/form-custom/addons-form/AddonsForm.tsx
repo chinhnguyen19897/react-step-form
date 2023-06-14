@@ -16,7 +16,7 @@ export const AddonsForm = () => {
           title={addOn.title}
           subtitle={addOn.subtitle}
           cost={parseInt(
-            formAPI.planInfo.pricingType === PriceUnit.MONTHLY
+            formAPI.planInfo.pricingUnit === PriceUnit.MONTHLY
               ? addOn.monthlyCost
               : addOn.yearlyCost
           )}
@@ -27,7 +27,7 @@ export const AddonsForm = () => {
               !(e.target as HTMLInputElement).checked
             );
           }}
-          unit={formAPI?.planInfo.pricingType}
+          unit={formAPI?.planInfo.pricingUnit}
         />
       ))}
     </>

@@ -1,6 +1,4 @@
-import styled from "@emotion/styled";
-
-export const HomeStyled = styled.section`
+.home-page {
   display: flex;
   padding-top: 8rem;
   justify-content: center;
@@ -17,4 +15,4 @@ export const HomeStyled = styled.section`
       margin-top: 15px;
     }
   }
-`
+}
