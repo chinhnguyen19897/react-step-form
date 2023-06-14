@@ -1,7 +1,7 @@
-@import "src/styles/variable";
+@import 'src/styles/base';
 
 .card-checkbox {
-  &:hover {
+   &:hover {
     border-color: $color-checkbox-hover;
   }
   padding: 0.75rem;

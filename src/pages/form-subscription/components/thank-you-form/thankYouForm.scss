@@ -1,3 +1,5 @@
+@import "src/styles/base";
+
 .form-finished {
   display: flex;
   justify-content: center;
@@ -14,10 +16,10 @@
     letter-spacing: 1px;
     font-weight: 700;
     font-size: 30px;
-    color: #02295a;
+    color: $color-text-marine-blue;
   }
   p {
-    color: #9699ab;
+    color: $color-text-light-gray;
     padding-bottom: 0;
     margin: 0;
   }

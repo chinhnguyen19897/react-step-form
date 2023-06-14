@@ -1,3 +1,5 @@
+@import "src/styles/base";
+
 .form-plan {
   display: flex;
   margin-top: 16px;
@@ -11,9 +13,9 @@
   }
 }
 .card-plan.no-active {
-    border-color:  #d6d9e6;
+    border-color:  $color-text-light-gray;
 }
   .card-plan.active {
-    border-color: #473dff;
+    border-color: $color-checkbox-hover;
   }
 }
