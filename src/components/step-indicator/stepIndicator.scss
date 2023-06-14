@@ -1,27 +1,29 @@
+@import 'src/styles/base';
+
 .step-indicator--wrapper {
   display: flex;
   align-items: center;
 }
 .step-indicator--title {
-  margin-left: 20px;
+   margin-left: 20px;
   .step-title {
-    text-transform: uppercase;
-    font-size: 12px;
-    line-height: 16px;
-    color: #d6d9e6;
+      text-transform: uppercase;
+      font-size: 12px;
+      line-height: 16px;
+      color: $color-text-light-gray;
   }
   .step-subtitle {
-    text-transform: uppercase;
-    font-weight: 700;
-    color: #fff;
-    font-size: 16px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: $white;
+      font-size: 16px;
   }
 }
 
 .step-number {
-  border: 1px solid #ffff;
+  border: 1px solid $white;
   background-color: transparent;
-  color: #ffffff;
+  color: $white;
   border-radius: 100%;
   width: 40px;
   height: 40px;
@@ -31,7 +33,7 @@
 }
 
 .step-number.active {
-  border: 1px solid #bfe2fd;
-  background-color: #bfe2fd;
-  color: #000000;
+  border: 1px solid $border-step-number;
+  background-color: $border-step-number;
+  color: $black;
 }

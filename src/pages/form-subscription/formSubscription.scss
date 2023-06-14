@@ -1,3 +1,5 @@
+@import 'src/styles/base';
+
 .form-wrapper {
   display: flex;
   flex-direction: row;
@@ -13,7 +15,7 @@
   border-radius: 0 0.75rem 0.75rem 0;
   width: 100%;
   min-height: 608px;
-  background-color: #fff;
+  background-color: $white;
 }
 
 .form-container {
