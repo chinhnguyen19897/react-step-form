@@ -44,7 +44,7 @@
     border-style: solid;
     border-radius: 5px;
     &:checked {
-      background-image: url("icon-checked.svg");
+      background-image: url("public/images/icon-checked.svg");
       background-color: $color-checkbox-hover;
     }
   }
