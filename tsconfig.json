@@ -14,7 +14,8 @@
       "@utils/*": ["utils/*"],
       "@types/*": ["types/*"],
       "@core/*": ["core/*"],
-      "@styles/*": ["assets/styles/*"],
+      "@context/*": ["context/*"],
+      "@styles/*": ["assets/styles/*"]
     },
     "types": ["node"],
     "module": "ESNext",

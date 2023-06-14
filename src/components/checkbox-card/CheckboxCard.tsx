@@ -4,7 +4,7 @@ import { formatCost } from "@utils/form.ts"
 
 type CheckboxCardProps = {
   isChecked: boolean
-  onChange: (e: ChangeEvent) => void
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void
   title: string
   subtitle: string
   cost: number

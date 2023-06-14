@@ -6,7 +6,7 @@ import { regExEmail, regExPhone } from "@utils/regex.ts"
 export const PersonalForm = () => {
   const formAPI = useContext(StepFormContext)
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  const register = formAPI!.personalInfo.formRegister // formAPI! -> khẳng định là formAPI không bao giờ null
+  const register = formAPI!.personalInfo.formRegister
   const errors = formAPI?.personalInfo.personalInfoErrors
 
   if (formAPI?.step != 1) return <></>

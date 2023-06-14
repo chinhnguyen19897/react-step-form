@@ -19,6 +19,7 @@ export const Card = ({
 }: CardProps) => {
   const prices = formatPrice(price, units)
   const yearly = units === EPriceUnit.YEARLY
+
   return (
     <section
       onClick={onClick}

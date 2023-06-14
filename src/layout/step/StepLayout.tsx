@@ -1,12 +1,11 @@
 import { ReactNode, useContext } from "react"
-import { StepFormContext } from "@core/context/FormContext.tsx"
+import { StepFormContext } from "@context/FormContext.tsx"
 import {
   StepFormFooter,
   StepFormHeader,
   StepFormStyled,
   StepFormWrapper,
 } from "./stepLayoutStyles.ts"
-import { Button } from "@assets/styles/button/buttonStyles.ts"
 
 type StepFormProps = {
   heading: string
@@ -40,18 +39,18 @@ const StepForm = ({
       {showHeaderFooter && (
         <StepFormFooter>
           {!isFirst && (
-            <Button
+            <button
               onClick={() => {
                 formAPI?.prevStep()
               }}
               className="button-prev"
             >
               Go Back
-            </Button>
+            </button>
           )}
-          <Button onClick={handleSubmit} className="button-next">
+          <button onClick={handleSubmit} className="button-next">
             {isLast ? "Confirm" : "Next Step"}
-          </Button>
+          </button>
         </StepFormFooter>
       )}
     </StepFormStyled>
