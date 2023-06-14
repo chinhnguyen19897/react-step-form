@@ -1,7 +1,7 @@
 import {StepFormContext} from "@core/context/FormContext.tsx";
 import {useContext} from "react";
 import {Card} from "@components/card/Card.tsx";
-import {PriceUnit} from "types/form.ts";
+import {EPriceUnit} from "types/form.ts";
 import {Switch} from "@components/switch/Switch.tsx";
 import {
     SelectPlanFormSwitch,
@@ -23,7 +23,7 @@ export const SelectPlanForm = () => {
               icon={icon}
               title={title}
               price={
-                formAPI?.planInfo.pricingType === PriceUnit.MONTHLY
+                formAPI?.planInfo.pricingType === EPriceUnit.MONTHLY
                   ? monthlyCost
                   : yearlyCost
               }
@@ -39,7 +39,7 @@ export const SelectPlanForm = () => {
           leftLabel="Monthly"
           rightLabel="Yearly"
           onChange={() => formAPI?.planInfo.togglePricingType()}
-          checked={formAPI?.planInfo.pricingType === PriceUnit.YEARLY}
+          checked={formAPI?.planInfo.pricingType === EPriceUnit.YEARLY}
         />
       </SelectPlanFormSwitch>
     </>

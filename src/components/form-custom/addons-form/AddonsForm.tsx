@@ -1,11 +1,11 @@
-import {useContext} from "react";
-import {PriceUnit} from "types/form.ts";
-import {StepFormContext} from "@core/context/FormContext.tsx";
-import {CheckboxCard} from "@components/checkbox-card/CheckboxCard";
+import { useContext } from "react";
+import { EPriceUnit } from "types/form.ts";
+import { StepFormContext } from "@core/context/FormContext.tsx";
+import { CheckboxCard } from "@components/checkbox-card/CheckboxCard";
 
-export const AddonsForm = () => {
+const AddOnsForm = () => {
   const formAPI = useContext(StepFormContext);
-  const allAddOns = formAPI?.addOnInfo.getAllAddons();
+  const allAddOns = formAPI?.addOnInfo.getAllAddOns();
   if (formAPI?.step != 3) return <></>;
 
   return (
@@ -16,7 +16,7 @@ export const AddonsForm = () => {
           title={addOn.title}
           subtitle={addOn.subtitle}
           cost={parseInt(
-            formAPI.planInfo.pricingType === PriceUnit.MONTHLY
+            formAPI.planInfo.pricingType === EPriceUnit.MONTHLY
               ? addOn.monthlyCost
               : addOn.yearlyCost,
           )}
@@ -33,3 +33,4 @@ export const AddonsForm = () => {
     </>
   );
 };
+export default AddOnsForm;

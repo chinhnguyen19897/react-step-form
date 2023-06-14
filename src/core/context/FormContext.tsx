@@ -1,7 +1,7 @@
 import React, {useState} from "react";
-import {PersonalInfo, PriceUnit, StepFormContextType} from "types/form.ts";
+import {PersonalInfo, EPriceUnit, StepFormContextType} from "types/form.ts";
 import {useForm} from "react-hook-form";
-import {AddOns, PLANS, STEP_INFO} from "@utils/stepUtils.ts";
+import {AddOns, PLANS, STEP_INFO} from "@utils/step.ts";
 
 const personInfo: PersonalInfo = {
   name: "",
@@ -16,9 +16,9 @@ export const useStepForm = (maxSteps: number) => {
   const [stepNumber, setStepNumber] = useState(1);
   const [personalInfoData, setPersonalInfoData] =
     useState<PersonalInfo>(personInfo);
-  const [selectPlan, setSelectPlan] = useState("1");
-  const [pricingUnit, setPricingUnit] = useState<PriceUnit>(PriceUnit.MONTHLY);
-  const [activeAddons, setActiveAddons] = useState<string[]>([]);
+  const [selectPlan, setSelectPlan] = useState(1);
+  const [pricingUnit, setPricingUnit] = useState<EPriceUnit>(EPriceUnit.MONTHLY);
+  const [activeAddons, setActiveAddons] = useState<number[]>([]);
 
   const {
     register,
@@ -72,11 +72,11 @@ export const useStepForm = (maxSteps: number) => {
     return AddOns;
   };
 
-  const isActiveAddon = (id: string) => {
+  const isActiveAddon = (id: number) => {
     return activeAddons.includes(id);
   };
 
-  const addOrRemoveAddon = (id: string, remove: boolean) => {
+  const addOrRemoveAddon = (id: number, remove: boolean) => {
     if (remove) {
       setActiveAddons((oldAddons) => {
         return oldAddons.filter((addOnId) => id != addOnId);
@@ -87,19 +87,19 @@ export const useStepForm = (maxSteps: number) => {
       });
     }
   };
-  const isPlanActive = (id: string) => {
+  const isPlanActive = (id: number) => {
     return selectPlan === id;
   };
 
-  const setPlanAsActive = (id: string) => {
+  const setPlanAsActive = (id: number) => {
     return setSelectPlan(id);
   };
 
   const togglePricingType = () => {
-    if (pricingUnit === PriceUnit.MONTHLY) {
-      setPricingUnit(PriceUnit.YEARLY);
+    if (pricingUnit === EPriceUnit.MONTHLY) {
+      setPricingUnit(EPriceUnit.YEARLY);
     } else {
-      setPricingUnit(PriceUnit.MONTHLY);
+      setPricingUnit(EPriceUnit.MONTHLY);
     }
   };
 
@@ -125,7 +125,7 @@ export const useStepForm = (maxSteps: number) => {
     ).map((addOn) => ({
       name: addOn.title,
       price:
-        pricingUnit === PriceUnit.MONTHLY
+        pricingUnit === EPriceUnit.MONTHLY
           ? addOn.monthlyCost
           : addOn.yearlyCost,
     }));
@@ -133,7 +133,7 @@ export const useStepForm = (maxSteps: number) => {
       plan: chosenPlan?.title,
       unit: pricingUnit,
       planPrice:
-        pricingUnit === PriceUnit.MONTHLY
+        pricingUnit === EPriceUnit.MONTHLY
           ? chosenPlan?.monthlyCost
           : chosenPlan?.yearlyCost,
       addOns: chosenAddons,
