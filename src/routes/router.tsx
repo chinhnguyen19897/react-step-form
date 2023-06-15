@@ -6,7 +6,6 @@ import Main from "@layout/Main.tsx"
 const Router = () => {
   return useRoutes([
     {
-      path: "/",
       element: <Main />,
       children: [
         {
