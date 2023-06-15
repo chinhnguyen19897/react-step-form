@@ -6,7 +6,7 @@
   }
   padding: 0.75rem;
   background-color: $white;
-  border-color: #f0f6ff;
+  border-color: $color-border-primary;
   display: flex;
   border-width: 1px;
   align-items: center;
@@ -17,8 +17,8 @@
 }
 
 .card-checkbox.active {
-  background-color: #f0f6ff;
-  border-color: #d6d9e6;
+  background-color: $color-border-primary;
+  border-color: $color-light-gray;
 }
 
 .check-box {
@@ -39,7 +39,7 @@
     width: 1rem;
     color: $color-checkbox-primary;
     background-color: $white;
-    border-color: #6b7280;
+    border-color: $color-border-secondary;
     border-width: 1px;
     border-style: solid;
     border-radius: 5px;
@@ -55,12 +55,12 @@
   flex-grow: 1;
   h3 {
     &:first-of-type {
-      color: rgb(2 41 90 / 1);
+      color: $color-text-marine-blue;
       font-weight: 500;
       letter-spacing: 0.025em;
     }
     &:last-child {
-      color: rgb(150 153 171 /1);
+      color: $color-text-subheader;
       font-size: 0.875rem;
       line-height: 1.25rem;
       font-weight: 400;

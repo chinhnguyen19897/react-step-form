@@ -1,8 +1,9 @@
+@import "../../styles/variable";
 .form-input {
   outline: 2px solid transparent;
   outline-offset: 2px;
   padding: 8px 12px;
-  border: 1px solid #d6d9e6;
+  border: 1px solid $color-light-gray;
   border-radius: 8px;
   width: 100%;
   margin-top: 8px;
@@ -20,7 +21,7 @@
     line-height: 1.25rem;
   }
   .error-massage {
-    color: #ed3548;
+    color: $color-error;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.25rem;
