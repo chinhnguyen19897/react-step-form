@@ -6,7 +6,7 @@ $font-family-base: "Roboto";
 
 //text colors
 $color-text-marine-blue: #02295A;
-$color-text-light-gray:  #D6D9E6;
+$color-text-subheader: #9699AB;
 
 //#9699ab #473dff #18488e
 
@@ -17,6 +17,10 @@ $color-button-primary: #18488e;
 $color-checkbox-primary: #2563eb;
 $color-checkbox-hover: #473dff;
 
+//border
+$color-border-primary: #f0f6ff;
+$color-border-secondary: #6b7280;
+
 
 $border-step-number: #BFE2FD;
 $bg-color-switch: #f0f6ff;
@@ -24,3 +28,6 @@ $bg-color-switch: #f0f6ff;
 //colors
 $white: #fff;
 $black: #000;
+$color-light-gray: #d6d9e6;
+$color-light-blue: #bfe2fd;
+$color-error: #ed3548;

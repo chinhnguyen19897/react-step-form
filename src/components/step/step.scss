@@ -1,3 +1,5 @@
+@import "../../styles/variable";
+
 .step-wrapper {
   display: flex;
   flex-direction: column;
@@ -30,7 +32,7 @@
     font-size: 30px;
     line-height: 36px;
     font-weight: 700;
-    color: #02295a;
+    color: $color-text-marine-blue;
     margin: 0;
   }
   h2 {
@@ -45,14 +47,14 @@
   padding: 0;
   margin-bottom: 0.5rem;
   position: relative;
-  background-color: #fff;
+  background-color: $white;
   width: 100%;
   left: 0;
   bottom: 0;
   display: flex;
   .button-prev {
     background-color: transparent;
-    color: #9699ab;
+    color: $color-light-gray;
   }
   .button-next {
     margin-left: auto;
